@@ -222,6 +222,35 @@ h1{
 .btn-success{ border-color:var(--accent); color:var(--accent-dark); background:var(--accent-bg); }
 .btn-flip{ width:100%; margin-top:24px; border-color:var(--ink); color:var(--ink); }
 
+.nav-row{
+  display:flex;
+  gap:10px;
+  margin-top:10px;
+}
+
+.btn-nav{
+  flex:1;
+  font-family:'Inter', sans-serif;
+  font-size:13px;
+  padding:10px 12px;
+  border-radius:6px;
+  border:1px solid var(--hair);
+  background:transparent;
+  color:var(--muted);
+  cursor:pointer;
+  transition:border-color 0.12s ease, color 0.12s ease;
+}
+
+.btn-nav:hover:not(:disabled){
+  border-color:var(--accent);
+  color:var(--accent-dark);
+}
+
+.btn-nav:disabled{
+  opacity:0.4;
+  cursor:default;
+}
+
 .kbd-note{
   text-align:center;
   font-family:'IBM Plex Mono', monospace;
@@ -1112,6 +1141,610 @@ const CARDS = [
     ]
   },
 
+  /* ==================== GRUPO III · TEMA 3 ==================== */
+  {
+    id: "g3t3-skeleton", tema: 3, tipo: "Estructura",
+    tag: "T3 · Esqueleto completo",
+    front: "La investigación, el desarrollo y la innovación (I+D+i) en España.\n\nReconstruye el índice completo: lista los epígrafes en orden con su tiempo aproximado.",
+    back: [
+      "0. Apertura (1 min)",
+      "1. Conceptos y delimitación (2 min)",
+      "2. Actores y gobernanza: el SECTI (2,5 min)",
+      "3. Recursos financieros y humanos (2,5 min)",
+      "4. Resultados e indicadores (2,5 min)",
+      "5. Transferencia de tecnología (2,5 min)",
+      "6. ICTS y la industria de la ciencia (2,5 min)",
+      "7. Comparación internacional y problemática (2,5 min)",
+      "8. Evolución, situación actual y tendencias (2 min)",
+      "9. Cierre (1 min)"
+    ]
+  },
+  {
+    id: "g3t3-e1", tema: 3, tipo: "Estructura",
+    tag: "T3 · Epígrafes 0-2",
+    front: "Apertura, conceptos y actores — ¿qué tienes que decir?",
+    back: [
+      "Apertura: la I+D+i explica la productividad a largo plazo; tesis — máximos históricos pero brecha estructural en el sector privado",
+      "Conceptos: manuales de Frascati y Oslo, categorías de I+D, invención frente a innovación, escala TRL",
+      "Actores: Ley 14/2011 y el SECTI; gobernanza (CPCTI); financiación (AEI y CDTI); ejecución (OPI, universidades, centros tecnológicos, empresas); apoyo",
+      "Idea de síntesis: no faltan actores, falta articulación público-privada"
+    ]
+  },
+  {
+    id: "g3t3-e2", tema: 3, tipo: "Estructura",
+    tag: "T3 · Epígrafes 3-4",
+    front: "Recursos y resultados — ¿qué bloques cubres?",
+    back: [
+      "Recursos: cifra de gasto y de intensidad, comparación con la UE, reparto por sector de ejecución y por origen de fondos, personal, distribución territorial",
+      "Instrumentos de financiación: AEI, CDTI, deducciones fiscales, compra pública de innovación, Horizonte Europa",
+      "Resultados: distinguir input, output e impacto",
+      "El contraste central: España publica más de lo que le corresponde por inversión, pero patenta mucho menos"
+    ]
+  },
+  {
+    id: "g3t3-e3", tema: 3, tipo: "Estructura",
+    tag: "T3 · Epígrafes 5-6",
+    front: "Transferencia, ICTS e industria de la ciencia — ¿qué cubres?",
+    back: [
+      "Transferencia: concepto, vías, estructuras de interfaz, medidas de la Ley 17/2022, y el valle de la muerte en TRL 4-7",
+      "ICTS: definición con sus tres rasgos, el Mapa vigente y sus cifras, ejemplos concretos, dimensión internacional (ESFRI, CERN, ESA)",
+      "Industria de la ciencia: proveedores de grandes instalaciones y mecanismo de retorno industrial coordinado por el CDTI"
+    ]
+  },
+  {
+    id: "g3t3-e4", tema: 3, tipo: "Estructura",
+    tag: "T3 · Epígrafes 7-9",
+    front: "Problemática, evolución y cierre — ¿qué cubres?",
+    back: [
+      "Problemática: las cinco causas (estructura productiva, tamaño empresarial, gestión pública, carrera investigadora, territorio)",
+      "Evolución: Ley 13/1986 y Planes Nacionales; recorte tras 2008; recuperación y Ley 17/2022; Plan de Recuperación",
+      "Tendencias: IA aplicada a la ciencia, cuántica, semiconductores, doble uso, ciencia abierta, enfoque de misiones",
+      "Cierre: ciencia pública eficiente frente a debilidad empresarial y de transferencia; enlace con Tema 1 y Grupo V"
+    ]
+  },
+  {
+    id: "g3t3-n1", tema: 3, tipo: "Norma",
+    tag: "T3 · Norma · Marco legal",
+    front: "Marco jurídico de la I+D+i en España: ley vigente, reforma y antecedente.",
+    back: [
+      "Ley 14/2011, de 1 de junio, de la Ciencia, la Tecnología y la Innovación — norma vertebradora",
+      "Reformada en profundidad por la Ley 17/2022: carrera científica, transferencia, compra pública precomercial",
+      "Antecedente: Ley 13/1986 de Fomento y Coordinación General de la Investigación Científica y Técnica",
+      "Complemento de ecosistema: Ley 28/2022 de fomento del ecosistema de las empresas emergentes («Ley de Startups»)",
+      "Sistema resultante: SECTI. Órganos: Consejo de Política Científica, Tecnológica y de Innovación y Consejo Asesor"
+    ]
+  },
+  {
+    id: "g3t3-c1", tema: 3, tipo: "Concepto",
+    tag: "T3 · Concepto · Frascati",
+    front: "Manual de Frascati: ¿qué define y cuáles son sus cinco criterios y sus tres categorías?",
+    back: [
+      "Define la I+D: trabajo creativo y sistemático para aumentar el acervo de conocimientos",
+      "Cinco criterios acumulativos: novedoso · creativo · incierto · sistemático · transferible o reproducible",
+      "Tres categorías: investigación básica · investigación aplicada · desarrollo experimental",
+      "Complementos: Manual de Oslo (innovación, 4.ª ed. 2018) y Manual de Canberra (recursos humanos)"
+    ]
+  },
+  {
+    id: "g3t3-c2", tema: 3, tipo: "Concepto",
+    tag: "T3 · Concepto · Innovación y TRL",
+    front: "Innovación según Oslo, diferencia con invención, y la escala TRL.",
+    back: [
+      "Oslo: producto o proceso de negocio nuevo o mejorado, significativamente distinto, puesto a disposición de usuarios o en uso",
+      "No toda innovación es tecnológica: hay innovación organizativa, de comercialización y de modelo de negocio",
+      "Invención = hecho técnico; innovación = llegar al mercado. España pierde posiciones justo en ese salto",
+      "TRL 1 a 9: la AEI financia TRL bajos; el CDTI y Horizonte Europa, TRL medios y altos",
+      "Valle de la muerte: TRL 4-7, la fase de demostración, capital-intensiva y con poca financiación"
+    ]
+  },
+  {
+    id: "g3t3-c3", tema: 3, tipo: "Concepto",
+    tag: "T3 · Concepto · Actores",
+    front: "Actores del SECTI: cita agentes de financiación, de ejecución y de apoyo.",
+    back: [
+      "Financiación: Agencia Estatal de Investigación (AEI) y CDTI (entidad pública empresarial; I+D+i empresarial y retorno industrial)",
+      "OPI: CSIC (el mayor), CIEMAT, Instituto de Salud Carlos III, IEO, IGME e INTA (adscrito a Defensa)",
+      "Ejecución: universidades, centros tecnológicos, empresas y comunidades autónomas",
+      "Apoyo: FECYT, ANECA, ENISA, CERSA, ICEX, SEPIDES, parques científicos y tecnológicos"
+    ]
+  },
+  {
+    id: "g3t3-d1", tema: 3, tipo: "Dato",
+    tag: "T3 · Dato · Gasto en I+D",
+    front: "Gasto en I+D en España (INE, año 2024): cifra absoluta, intensidad y comparación europea.",
+    back: [
+      "23.931 millones de euros — máximo histórico, +6,9% respecto a 2023",
+      "1,50% del PIB (era el 1,23% en 2018)",
+      "Media de la UE estable en torno al 2,2% desde 2018 → España converge, pero muy despacio",
+      "Objetivo europeo de referencia: 3% del PIB"
+    ]
+  },
+  {
+    id: "g3t3-d2", tema: 3, tipo: "Dato",
+    tag: "T3 · Dato · Reparto del gasto",
+    front: "Gasto en I+D por sector de ejecución y por origen de los fondos.",
+    back: [
+      "Ejecución: Empresas 55,8% (0,84% del PIB) · Enseñanza Superior 24,9% (0,37%) · Administración Pública 19,1% (0,29%) · IPSFL 0,3%",
+      "Origen de fondos: sector empresarial 47,7% · Administración 38,6%",
+      "Dentro del gasto empresarial: servicios 54,4% frente a industria 44,0%",
+      "Ramas punteras: programación informática y fabricación de vehículos de motor"
+    ]
+  },
+  {
+    id: "g3t3-d3", tema: 3, tipo: "Dato",
+    tag: "T3 · Dato · Personal y territorio",
+    front: "Personal dedicado a I+D y distribución territorial del esfuerzo investigador.",
+    back: [
+      "295.290 personas en equivalencia a jornada completa (+4,6%)",
+      "184.382 personal investigador (+5,3%); las mujeres son el 41,4% del total",
+      "CCAA líderes por gasto sobre PIB regional: Navarra 2,34% · País Vasco 2,30% · Madrid 2,18%",
+      "En la cola: Ceuta 0,28% · Baleares 0,40% · Melilla 0,47%",
+      "Concentración en Madrid, Cataluña y País Vasco; Andalucía, el mayor desajuste entre peso económico y peso investigador"
+    ]
+  },
+  {
+    id: "g3t3-d4", tema: 3, tipo: "Dato",
+    tag: "T3 · Dato · Resultados",
+    front: "Resultados del sistema: ¿dónde va bien España y dónde va mal?",
+    back: [
+      "Bien: producción científica en torno al 3% mundial y entre los 10-12 primeros países — por encima de lo que corresponde a su inversión",
+      "Mal: solicitudes de patente europea por millón de habitantes muy por debajo de la media UE",
+      "Vías de patente: OEPM (nacional) · EPO, patente unitaria y Tribunal Unificado (europea) · PCT (internacional)",
+      "Balanza de pagos tecnológica tradicionalmente deficitaria",
+      "Cuadro Europeo de Indicadores de la Innovación: España, «innovador moderado»"
+    ]
+  },
+  {
+    id: "g3t3-c4", tema: 3, tipo: "Concepto",
+    tag: "T3 · Concepto · Transferencia",
+    front: "Transferencia de tecnología: vías y estructuras de interfaz.",
+    back: [
+      "Vías: licencia de patentes y know-how · contratos y proyectos en colaboración · spin-offs y empresas de base tecnológica · movilidad de personal · doctorados industriales · compra pública de innovación",
+      "Estructuras: OTRI de universidades y OPI · centros tecnológicos (el actor mejor adaptado a la PYME industrial) · clústeres o Agrupaciones Empresariales Innovadoras · parques científicos y tecnológicos",
+      "Financiación de escalado: Innvierte (CDTI), ENISA, Fond-ICO, capital riesgo",
+      "Cuello de botella: el valle de la muerte, TRL 4-7"
+    ]
+  },
+  {
+    id: "g3t3-d5", tema: 3, tipo: "Dato",
+    tag: "T3 · Dato · ICTS",
+    front: "ICTS: definición con sus tres rasgos y cifras del Mapa vigente.",
+    back: [
+      "Tres rasgos acumulativos: titularidad pública · singulares o únicas en su especie · acceso abierto y competitivo de la comunidad investigadora",
+      "Instrumento: Mapa de ICTS, aprobado por el CPCTI con las CCAA. Primer mapa en 2007",
+      "Mapa vigente 2025-2028, aprobado en octubre de 2025: 28 ICTS, 64 infraestructuras, 15 CCAA, ~2.500 profesionales",
+      "Actividad 2021-2024: más de 9.000 proyectos y ~3.300 contratos con empresas; convocatoria FEDER de 200 M€",
+      "Ejemplos: sincrotrón ALBA · Gran Telescopio Canarias · BSC-MareNostrum · Plataforma Solar de Almería · CENIEH"
+    ]
+  },
+  {
+    id: "g3t3-c5", tema: 3, tipo: "Concepto",
+    tag: "T3 · Concepto · Industria de la ciencia",
+    front: "¿Qué es la industria de la ciencia y cómo funciona el retorno industrial?",
+    back: [
+      "Tejido empresarial que suministra a las grandes instalaciones científicas: imanes, criogenia, ultra alto vacío, óptica de precisión, electrónica de detección, ingeniería y montaje",
+      "Nicho de altísimo valor añadido y fuerte efecto tractor tecnológico",
+      "Retorno industrial: España aporta cuota a organismos como el CERN, la ESA o el ESO y aspira a que sus empresas obtengan contratos por valor equivalente",
+      "Lo coordina el CDTI mediante los Industrial Liaison Officers; el indicador es el coeficiente de retorno",
+      "Efecto adicional: ser proveedor del CERN funciona como sello de calidad para exportar",
+      "Ámbito internacional: hoja de ruta ESFRI, CERN, ESA, ESO, ITER, ESS, XFEL"
+    ]
+  },
+  {
+    id: "g3t3-c6", tema: 3, tipo: "Concepto",
+    tag: "T3 · Concepto · Las cinco causas",
+    front: "¿Por qué España no cierra la brecha de I+D? Las cinco causas estructurales.",
+    back: [
+      "1. Estructura productiva: especialización sectorial de baja intensidad tecnológica (enlace Tema 1)",
+      "2. Tamaño empresarial: la I+D tiene costes fijos y exige escala mínima; el 99,8% son PYME",
+      "3. Gestión pública: rigidez administrativa y baja ejecución del capítulo de créditos financieros",
+      "4. Carrera investigadora: precariedad, fuga de talento, poca permeabilidad academia-empresa",
+      "5. Territorio: concentración en tres comunidades y riesgo de ampliar brechas regionales",
+      "Ojo: la brecha se concentra casi por completo en el gasto empresarial, no en el público"
+    ]
+  },
+
+  /* ==================== GRUPO III · TEMA 4 ==================== */
+  {
+    id: "g3t4-skeleton", tema: 4, tipo: "Estructura",
+    tag: "T4 · Esqueleto completo",
+    front: "Tecnologías productivas.\n\nReconstruye el índice completo: lista los epígrafes en orden con su tiempo aproximado.",
+    back: [
+      "0. Apertura (1 min)",
+      "1. Procesos de fabricación (2,5 min)",
+      "2. Ingeniería concurrente y diseño para la fabricación (2,5 min)",
+      "3. Ecodiseño y diseño orientado al reciclaje (2,5 min)",
+      "4. Envases y embalajes (2 min)",
+      "5. Automatización de operaciones y procesos (2,5 min)",
+      "6. Robótica industrial (2 min)",
+      "7. Sistemas de fabricación integrada y avanzada (2,5 min)",
+      "8. Digitalización de la industria y KET (2,5 min)",
+      "9. Tendencias y cierre (1,5 min)"
+    ]
+  },
+  {
+    id: "g3t4-e1", tema: 4, tipo: "Estructura",
+    tag: "T4 · Epígrafes 0-2",
+    front: "Apertura, procesos y diseño — ¿qué tienes que decir?",
+    back: [
+      "Apertura: es el tema más técnico del Grupo III; anuncia el hilo conductor — ciclo de vida del producto: fabricar, diseñar, automatizar, digitalizar",
+      "Procesos: las seis familias, más la aditiva; criterios de selección; distinción proceso continuo / discreto / por lotes",
+      "Ingeniería concurrente: el 70-80% del coste se compromete en diseño; secuencial frente a concurrente; QFD, AMFE, Taguchi; CAD-CAE-CAM sobre PLM",
+      "DFMA y la familia DFX"
+    ]
+  },
+  {
+    id: "g3t4-e2", tema: 4, tipo: "Estructura",
+    tag: "T4 · Epígrafes 3-4",
+    front: "Ecodiseño y envases — ¿qué cubres?",
+    back: [
+      "Ecodiseño: concepto de ciclo de vida, ACV con ISO 14040/14044, ISO 14006, el Reglamento ESPR y sus novedades, diseño para reciclaje y desmontaje, jerarquía de residuos, marco español",
+      "Envases: funciones, tres niveles, materiales y el conflicto multicapa/reciclabilidad, tecnologías de envasado",
+      "Y el punto fuerte: el Reglamento PPWR, su cambio de directiva a reglamento y su contenido"
+    ]
+  },
+  {
+    id: "g3t4-e3", tema: 4, tipo: "Estructura",
+    tag: "T4 · Epígrafes 5-6",
+    front: "Automatización y robótica — ¿qué cubres?",
+    back: [
+      "Automatización: grados (fija, programable, flexible); pirámide ISA-95; sensores, PLC, DCS, SCADA, CNC, visión; buses de campo y OPC UA; aplanamiento de la pirámide; logística interna; criterios de decisión",
+      "Robótica: definición ISO 8373, componentes, configuraciones, parámetros, aplicaciones, cobots y normas de seguridad",
+      "Cierra con los datos del IFR y la densidad robótica comparada — es el dato de diagnóstico competitivo"
+    ]
+  },
+  {
+    id: "g3t4-e4", tema: 4, tipo: "Estructura",
+    tag: "T4 · Epígrafes 7-9",
+    front: "Fabricación integrada y avanzada, digitalización y cierre — ¿qué cubres?",
+    back: [
+      "FMS y CIM; organización lean (JIT, SMED, TPM, jidoka) y el indicador OEE",
+      "Fabricación aditiva: ventajas y límites; otras tecnologías avanzadas; nexo con la máquina-herramienta española",
+      "Industria 4.0 y sus pilares; conectividad y ciberseguridad OT; Industria 5.0; gobernanza del dato; KET y su transversalidad; instrumentos de política",
+      "Cierre: descarbonización de procesos, resiliencia, servitización, y la barrera real — escasez de perfiles técnicos"
+    ]
+  },
+  {
+    id: "g3t4-c1", tema: 4, tipo: "Concepto",
+    tag: "T4 · Concepto · Procesos",
+    front: "Clasifica los procesos de fabricación por familias, con ejemplos de cada una.",
+    back: [
+      "Conformado por moldeo, sin arranque: fundición en arena, coquilla, inyección, cera perdida; pulvimetalurgia",
+      "Deformación plástica: laminación, forja, extrusión, trefilado, estampación, embutición (frío: acritud y mejor acabado; caliente: menores esfuerzos)",
+      "Arranque de viruta: torneado, fresado, taladrado, brochado, rectificado — mejores tolerancias, mayor desperdicio",
+      "No convencionales: electroerosión, láser, chorro de agua, ultrasonidos, haz de electrones, electroquímico",
+      "Unión: soldadura (fusión, resistencia, fricción-agitación), adhesivos, uniones mecánicas",
+      "Tratamientos térmicos y superficiales: temple, revenido, recocido, cementación, PVD, CVD, anodizado",
+      "Y aparte, la fabricación aditiva, que invierte la lógica: añade en lugar de quitar"
+    ]
+  },
+  {
+    id: "g3t4-c2", tema: 4, tipo: "Concepto",
+    tag: "T4 · Concepto · Selección de proceso",
+    front: "¿Qué criterios determinan la elección de un proceso de fabricación? ¿Y qué tipologías de industria distingues?",
+    back: [
+      "Criterios: material y conformabilidad · geometría y tolerancias · volumen de serie · coste de utillaje frente a coste unitario",
+      "Es la lógica del punto muerto: la inyección solo compensa con series largas; la aditiva compite en series cortas y alta complejidad",
+      "Tipologías: proceso continuo (química, refino, cemento, siderurgia) · fabricación discreta (automoción, bienes de equipo) · producción por lotes (farmacia, alimentación)",
+      "La tipología condiciona automatización, mantenimiento e intensidad energética"
+    ]
+  },
+  {
+    id: "g3t4-c3", tema: 4, tipo: "Concepto",
+    tag: "T4 · Concepto · Ingeniería concurrente",
+    front: "Ingeniería concurrente: dato de partida, diferencia con la secuencial y herramientas asociadas.",
+    back: [
+      "Dato de partida: el 70-80% del coste final queda comprometido en la fase de diseño, con una fracción mínima del presupuesto gastada",
+      "Secuencial: «lanzar por encima del muro». Concurrente: equipos multidisciplinares en paralelo, solapamiento de fases, proveedores integrados",
+      "Resultado: menor plazo de lanzamiento al mercado y menos cambios de ingeniería tardíos",
+      "Herramientas: QFD (casa de la calidad) · AMFE de diseño y de proceso · diseño de experimentos y métodos de Taguchi · análisis del valor",
+      "Soporte: CAD-CAE-CAM sobre PLM, prototipado rápido, gemelo digital"
+    ]
+  },
+  {
+    id: "g3t4-c4", tema: 4, tipo: "Concepto",
+    tag: "T4 · Concepto · DFMA",
+    front: "Reglas del diseño orientado a la fabricación y el montaje, y qué es el DFX.",
+    back: [
+      "Reducir el número de piezas — la pieza que no existe ni falla ni se monta",
+      "Integrar funciones y diseñar de forma modular",
+      "Montaje unidireccional y autoposicionamiento de las piezas",
+      "Evitar piezas que se enreden o que exijan orientación",
+      "No exigir tolerancias más estrictas de las necesarias",
+      "DFX: la generalización — diseño para el ensayo, el mantenimiento, la logística, el desmontaje o el reciclaje"
+    ]
+  },
+  {
+    id: "g3t4-n1", tema: 4, tipo: "Norma",
+    tag: "T4 · Norma · Ecodiseño",
+    front: "Marco normativo del ecodiseño: norma europea clave y sus novedades.",
+    back: [
+      "Reglamento (UE) 2024/1781, de 13 de junio de 2024 (ESPR): marco de requisitos de diseño ecológico para productos sostenibles",
+      "Deroga la Directiva 2009/125/CE y amplía el ámbito: ya no solo productos relacionados con la energía, sino casi cualquier producto",
+      "Novedades: requisitos de durabilidad, reparabilidad, reciclabilidad y contenido reciclado fijados por actos delegados; Pasaporte Digital de Producto",
+      "Prohibición de destruir productos de consumo no vendidos: textil y calzado desde el 19 de julio de 2026; medianas empresas desde 2030",
+      "Herramientas técnicas: ACV según ISO 14040 y 14044 (cuatro fases) · ISO 14006 (ecodiseño en ISO 14001) · huella ambiental de producto"
+    ]
+  },
+  {
+    id: "g3t4-n2", tema: 4, tipo: "Norma",
+    tag: "T4 · Norma · Envases",
+    front: "Reglamento de envases (PPWR): identificación, fecha de aplicación y contenido.",
+    back: [
+      "Reglamento (UE) 2025/40, de 19 de diciembre de 2024, sobre envases y residuos de envases; deroga la Directiva 94/62/CE",
+      "Cambio clave: de directiva a reglamento → aplicación directa y uniforme, elimina divergencias de transposición",
+      "Aplicable con carácter general desde el 12 de agosto de 2026",
+      "Contenido: todos los envases reciclables en 2030 · contenido reciclado mínimo · objetivos de reutilización y recarga · límites al espacio vacío y al envase excesivo · refuerzo de la responsabilidad ampliada del productor",
+      "Marco español: Real Decreto 1055/2022 de envases y residuos de envases y los sistemas colectivos de responsabilidad ampliada"
+    ]
+  },
+  {
+    id: "g3t4-c5", tema: 4, tipo: "Concepto",
+    tag: "T4 · Concepto · Envases",
+    front: "Envases: funciones, niveles y el conflicto técnico central.",
+    back: [
+      "Funciones: contener y dosificar · proteger · conservar · informar · facilitar la logística · soporte de marketing",
+      "Niveles: primario o de venta · secundario o colectivo · terciario o de transporte",
+      "Conflicto central: el complejo multicapa optimiza barrera y peso, pero es el gran enemigo de la reciclabilidad — eficiencia funcional frente a circularidad",
+      "Tecnologías: atmósfera modificada, vacío, envasado aséptico, envases activos e inteligentes con indicadores de tiempo-temperatura",
+      "Jerarquía de residuos: prevención → preparación para la reutilización → reciclado → valorización → eliminación"
+    ]
+  },
+  {
+    id: "g3t4-c6", tema: 4, tipo: "Concepto",
+    tag: "T4 · Concepto · Automatización",
+    front: "Grados de automatización y arquitectura de la planta.",
+    back: [
+      "Grados: fija o rígida (gran serie, línea transfer, inflexible) · programable (lotes) · flexible (volumen y variedad)",
+      "Pirámide ISA-95: campo → control (PLC / DCS) → supervisión (SCADA) → ejecución (MES) → corporativo (ERP)",
+      "Comunicaciones: buses de campo (Profinet, EtherCAT, Modbus) y OPC UA como estándar de interoperabilidad",
+      "Tendencia: la pirámide se aplana — con IIoT y computación en el borde el dato de campo sube directamente a la nube",
+      "Justificación: no solo ahorro de mano de obra, también repetibilidad y calidad, seguridad, ergonomía y plazo; se evalúa por VAN y plazo de recuperación"
+    ]
+  },
+  {
+    id: "g3t4-d1", tema: 4, tipo: "Dato",
+    tag: "T4 · Dato · Robótica",
+    front: "Datos de robótica industrial (IFR, World Robotics 2025, referidos a 2024) y densidad robótica comparada.",
+    back: [
+      "~542.000 robots instalados en el año; parque mundial en torno a 4,66 millones de unidades (+9%)",
+      "Asia concentra el 74% de las instalaciones; China por sí sola el 54% del mercado mundial",
+      "Densidad robótica (robots por 10.000 empleados de manufactura): mundo ~132 · UE-27 231 · Europa Occidental 267",
+      "Ranking: Corea del Sur por encima de 1.000 · Alemania ~449 · Japón ~446",
+      "España: entre los ocho países de Europa Occidental del top 20 mundial, pero por debajo de la media UE-27 — automatiza, aunque menos que sus competidores directos"
+    ]
+  },
+  {
+    id: "g3t4-n3", tema: 4, tipo: "Norma",
+    tag: "T4 · Norma · Robótica",
+    front: "Robótica: definición normalizada, configuraciones, parámetros y normas de seguridad.",
+    back: [
+      "ISO 8373: manipulador multifuncional reprogramable, controlado automáticamente, con tres o más ejes",
+      "Configuraciones: cartesiano o pórtico · SCARA · articulado o antropomórfico (el más versátil) · paralelo delta · colaborativo",
+      "Parámetros: grados de libertad · carga útil · alcance · repetibilidad (que no es exactitud) · velocidad de ciclo",
+      "Seguridad: ISO 10218, en sus partes de robot y de célula robotizada; ISO/TS 15066 para robótica colaborativa",
+      "Aplicaciones dominantes: soldadura, manipulación y paletizado, pintura, montaje e inspección con visión"
+    ]
+  },
+  {
+    id: "g3t4-c7", tema: 4, tipo: "Concepto",
+    tag: "T4 · Concepto · Fabricación integrada",
+    front: "FMS, CIM, lean y fabricación aditiva: lo esencial de cada uno.",
+    back: [
+      "Célula flexible → sistema flexible de fabricación (FMS): máquinas CNC + manipulación automatizada + control común; produce familias de piezas sin reconfiguración manual",
+      "CIM: integración de diseño, planificación, producción, calidad y logística sobre base de datos común; concebido en los ochenta, viable de verdad con la Industria 4.0",
+      "Lean: justo a tiempo y kanban · SMED (lo que hace posible el lote pequeño) · TPM · 5S · jidoka y poka-yoke. Indicador: OEE = disponibilidad × rendimiento × calidad",
+      "Aditiva, ventajas: geometrías imposibles, aligeramiento topológico, refrigeración conformada, repuestos bajo demanda, series cortas sin utillaje",
+      "Aditiva, límites: productividad, tamaño de pieza, coste de material, acabado y, sobre todo, certificación y repetibilidad"
+    ]
+  },
+  {
+    id: "g3t4-c8", tema: 4, tipo: "Concepto",
+    tag: "T4 · Concepto · Industria 4.0 y KET",
+    front: "Pilares de la Industria 4.0, qué añade la 5.0 y cuáles son las KET.",
+    back: [
+      "Pilares 4.0: IIoT · analítica de datos · nube y borde · gemelo digital · IA (mantenimiento predictivo, visión, programación) · realidad aumentada · simulación · integración vertical y horizontal",
+      "Habilitantes inseparables: 5G industrial y ciberseguridad OT (IEC 62443, Directiva NIS2) — al conectar la planta se amplía la superficie de ataque",
+      "Industria 5.0 (Comisión Europea): añade centralidad del ser humano, sostenibilidad y resiliencia; no sustituye a la 4.0, la reorienta",
+      "KET: micro y nanoelectrónica · nanotecnología · fotónica · materiales avanzados · biotecnología industrial · fabricación avanzada (+ seguridad digital, conectividad e IA)",
+      "Rasgo común de las KET: transversalidad — no son un sector, son insumos de todos",
+      "Instrumentos: Industria Conectada 4.0 · Digital Innovation Hubs · Programa Europa Digital · Reglamento europeo de chips y PERTE Chip"
+    ]
+  },
+
+  /* ==================== GRUPO III · TEMA 5 ==================== */
+  {
+    id: "g3t5-skeleton", tema: 5, tipo: "Estructura",
+    tag: "T5 · Esqueleto completo",
+    front: "Tecnologías energéticas.\n\nReconstruye el índice completo: lista los epígrafes en orden con su tiempo aproximado.",
+    back: [
+      "0. Apertura (1 min)",
+      "1. Estado del arte de las tecnologías energéticas (3 min)",
+      "2. Economía de los recursos energéticos (2,5 min)",
+      "3. Geoestrategia de la energía (2,5 min)",
+      "4. Panorama energético mundial, con especial mención a la UE (2,5 min)",
+      "5. Transición energética (3 min)",
+      "6. Digitalización y energía (2 min)",
+      "7. Tendencias y cierre (1,5 min)"
+    ]
+  },
+  {
+    id: "g3t5-e1", tema: 5, tipo: "Estructura",
+    tag: "T5 · Epígrafes 0-2",
+    front: "Apertura, estado del arte y economía — ¿qué tienes que decir?",
+    back: [
+      "Apertura: el tema es la bisagra del Grupo III; tesis — la transición ya no es un problema de tecnología, sino de sistema y de geopolítica industrial",
+      "Aviso metodológico: el balance energético español y cada sector van en los temas siguientes; la regulación, en el Grupo V",
+      "Estado del arte en cuatro bloques: convencional, renovable, almacenamiento y vectores, redes",
+      "Economía: rasgos del bien, Hotelling, recursos frente a reservas, estructura de costes, formación de precios, externalidades, canibalización y contratos de largo plazo"
+    ]
+  },
+  {
+    id: "g3t5-e2", tema: 5, tipo: "Estructura",
+    tag: "T5 · Epígrafes 3-4",
+    front: "Geoestrategia y panorama mundial — ¿qué cubres?",
+    back: [
+      "Geoestrategia: concentración de recursos, cuellos de botella físicos, hitos históricos (1973, 1979, 2022), nueva dependencia de cadenas industriales, respuesta regulatoria europea, posición de España",
+      "Panorama mundial: estructura de la demanda primaria, tendencias de fondo, escenarios de la AIE, marco internacional y COP28",
+      "UE: Ley Europea del Clima, Objetivo 55, RED III, eficiencia, reforma del mercado eléctrico y el giro hacia competitividad y asequibilidad"
+    ]
+  },
+  {
+    id: "g3t5-e3", tema: 5, tipo: "Estructura",
+    tag: "T5 · Epígrafes 5-7",
+    front: "Transición energética, digitalización y cierre — ¿qué cubres?",
+    back: [
+      "Transición: definición sobre tres palancas, sectores difíciles de abatir, objetivos del PNIEC, retos de integración, estabilidad del sistema, dimensión social",
+      "Digitalización: red, demanda, generación, mercados; y la contrapartida — ciberseguridad y consumo de los centros de datos",
+      "Cierre: nuclear y SMR, hidrógeno revisado a la baja, almacenamiento de larga duración; y el trilema energético como frase final"
+    ]
+  },
+  {
+    id: "g3t5-c1", tema: 5, tipo: "Concepto",
+    tag: "T5 · Concepto · Generación",
+    front: "Estado del arte de las tecnologías de generación: convencional y renovable.",
+    back: [
+      "Ciclo combinado de gas: rendimiento ~60%, arranque rápido, papel de respaldo; cogeneración de alta eficiencia en industria",
+      "Nuclear de fisión: parque de PWR y BWR; frontera en reactores modulares pequeños y IV Generación. Fusión: ITER y DEMO, más iniciativas privadas — no es tecnología del horizonte 2030",
+      "Eólica: terrestre madura; marina fija; flotante como opción para España por batimetría y oportunidad para el sector naval",
+      "Fotovoltaica: silicio cristalino PERC → TOPCon → heterounión; bifacial y seguidores; frontera en la célula tándem de perovskita",
+      "Termosolar: torre y cilindroparabólica con sales fundidas; su ventaja diferencial es la gestionabilidad y España es referencia mundial"
+    ]
+  },
+  {
+    id: "g3t5-c2", tema: 5, tipo: "Concepto",
+    tag: "T5 · Concepto · Almacenamiento y vectores",
+    front: "Almacenamiento, vectores energéticos y el indicador de coste. ¿Qué matiz hay que hacer sobre el LCOE?",
+    back: [
+      "Bombeo: sigue siendo, con diferencia, el mayor almacenamiento instalado del mundo",
+      "Ion-litio: caída de coste superior al 90% en poco más de una década; LFP en estacionario por coste y seguridad, NMC en automoción",
+      "Emergentes: sodio-ion, flujo redox para larga duración, estado sólido",
+      "Vectores: hidrógeno por electrólisis (alcalina, PEM, óxido sólido), amoniaco y combustibles sintéticos; CCUS para emisiones de proceso",
+      "LCOE: solar y eólica son ya lo más barato en nueva generación, PERO el LCOE no captura el coste de sistema —firmeza, respaldo, redes—; la comparación honesta es a nivel de sistema, no de tecnología aislada"
+    ]
+  },
+  {
+    id: "g3t5-c3", tema: 5, tipo: "Concepto",
+    tag: "T5 · Concepto · Economía de la energía",
+    front: "Regla de Hotelling, recursos frente a reservas y el cambio de debate sobre el «pico».",
+    back: [
+      "Rasgos del bien: homogéneo, demanda inelástica a corto y elástica a largo, fuertes externalidades → volatilidad e intervención pública",
+      "Hotelling: el precio neto de un recurso agotable debería crecer a la tasa de descuento, incorporando una renta de escasez; el mercado se desvía por progreso técnico y nuevas reservas",
+      "Recursos = lo geológicamente existente; reservas = lo económicamente extraíble hoy → las reservas crecen cuando sube el precio",
+      "El debate ha pasado del pico de oferta al pico de demanda: no si se agotará el petróleo, sino cuándo dejará de crecer su consumo"
+    ]
+  },
+  {
+    id: "g3t5-c4", tema: 5, tipo: "Concepto",
+    tag: "T5 · Concepto · Precios y externalidades",
+    front: "Estructura de costes, formación de precios e internalización de externalidades en energía.",
+    back: [
+      "Renovables y nuclear: intensivas en capital, coste variable casi nulo. Gas: intensivo en combustible → determina el orden de mérito y suele fijar el precio marginal",
+      "Referencias: Brent y WTI en crudo · TTF en gas europeo · MIBGAS en el mercado ibérico · contango y backwardation en mercados a plazo",
+      "Internalización: régimen de comercio de derechos de emisión y su extensión · Mecanismo de Ajuste en Frontera por Carbono · fiscalidad energética · y, en sentido contrario, las subvenciones a fósiles",
+      "Dos conceptos propios de la transición: canibalización del precio capturado por las renovables, y PPA y contratos por diferencias como estabilizadores de ingresos que abaratan la financiación"
+    ]
+  },
+  {
+    id: "g3t5-d1", tema: 5, tipo: "Dato",
+    tag: "T5 · Dato · Geoestrategia",
+    front: "Geoestrategia: cuellos de botella físicos, hitos históricos y la nueva dependencia.",
+    back: [
+      "Cuellos de botella: estrecho de Ormuz · canal de Suez y Bab el-Mandeb · estrecho de Malaca · canal de Panamá",
+      "Hitos: crisis de 1973 y 1979 → nacimiento de la Agencia Internacional de la Energía y de las reservas estratégicas",
+      "2022: invasión de Ucrania, fin del gas ruso por gasoducto, auge del GNL con EEUU como primer exportador mundial → REPowerEU",
+      "Nueva dependencia: China domina la fabricación fotovoltaica, la cadena de baterías y el refino de materiales críticos (tierras raras, litio, cobalto, grafito)",
+      "Riesgo a nombrar: sustituir una dependencia de hidrocarburos por otra de componentes y minerales"
+    ]
+  },
+  {
+    id: "g3t5-n1", tema: 5, tipo: "Norma",
+    tag: "T5 · Norma · Respuesta UE industrial",
+    front: "¿Con qué normas responde la UE a la dependencia industrial y de materiales? ¿Y cuál es la posición de España?",
+    back: [
+      "Reglamento de Materias Primas Fundamentales: objetivos para 2030 de extracción, transformación y reciclado propios, y límite a la dependencia de un único tercer país",
+      "Reglamento para una industria de cero emisiones netas: objetivo de capacidad de fabricación europea de tecnologías limpias",
+      "REPowerEU como respuesta de emergencia a la crisis del gas",
+      "España, debilidad: interconexión eléctrica con Francia muy por debajo del objetivo del 15% → «isla energética»",
+      "España, fortaleza: capacidad de regasificación de las mayores de Europa (puerta de entrada de GNL), recurso solar y eólico, proyectos de interconexión de hidrógeno"
+    ]
+  },
+  {
+    id: "g3t5-d2", tema: 5, tipo: "Dato",
+    tag: "T5 · Dato · Panorama mundial",
+    front: "Mix energético primario mundial, tendencias de fondo y escenarios de la AIE.",
+    back: [
+      "Fósiles en torno al 80% del total: petróleo ~30% · carbón ~26% · gas ~23%",
+      "Tendencias: crecimiento concentrado en Asia · electrificación del consumo final · demanda eléctrica de centros de datos e IA como factor nuevo · inversión limpia que ya duplica aproximadamente a la fósil",
+      "Escenarios AIE: STEPS (políticas declaradas) · APS (compromisos anunciados) · NZE (cero emisiones netas 2050) — solo el último es compatible con 1,5 °C",
+      "Marco internacional: CMNUCC, Protocolo de Kioto, Acuerdo de París (2015) y contribuciones determinadas a nivel nacional",
+      "COP28: primera referencia explícita al abandono progresivo de los fósiles; triplicar renovables y duplicar la tasa de eficiencia en 2030"
+    ]
+  },
+  {
+    id: "g3t5-n2", tema: 5, tipo: "Norma",
+    tag: "T5 · Norma · Objetivos UE",
+    front: "Marco de objetivos energéticos y climáticos de la UE.",
+    back: [
+      "Ley Europea del Clima: neutralidad climática en 2050 y reducción del 55% en 2030 respecto a 1990",
+      "Paquete Objetivo 55 como desarrollo legislativo",
+      "Directiva de energías renovables en su tercera revisión (RED III): 42,5% de renovables sobre consumo final en 2030, más un 2,5% indicativo adicional",
+      "Directiva de eficiencia energética revisada",
+      "Reforma del mercado eléctrico de 2024: contratos por diferencias bidireccionales, refuerzo de los PPA y protección del consumidor",
+      "Giro reciente del discurso: de la ambición climática a la competitividad y la asequibilidad — Pacto por una Industria Limpia (enlace Tema 1)"
+    ]
+  },
+  {
+    id: "g3t5-d3", tema: 5, tipo: "Dato",
+    tag: "T5 · Dato · PNIEC objetivos generales",
+    front: "PNIEC 2023-2030 actualizado: los cinco objetivos generales para 2030.",
+    back: [
+      "−32% de emisiones de GEI respecto a 1990 (equivale a −55% respecto a 2005); el PNIEC anterior fijaba −23%",
+      "48% de renovables sobre el uso final de la energía (antes 42%)",
+      "81% de generación eléctrica renovable (antes 74%)",
+      "43% de mejora de la eficiencia energética (antes 41,7%)",
+      "Reducción de la dependencia energética hasta el 50%",
+      "Versión actualizada aprobada en septiembre de 2024"
+    ]
+  },
+  {
+    id: "g3t5-d4", tema: 5, tipo: "Dato",
+    tag: "T5 · Dato · PNIEC capacidades",
+    front: "PNIEC 2023-2030: objetivos de potencia y de despliegue para 2030.",
+    back: [
+      "214 GW de potencia total instalada, de los cuales 160 GW renovables",
+      "Eólica 62 GW (con 3 GW de eólica marina) · fotovoltaica 76 GW (incluyendo 19 GW de autoconsumo)",
+      "Almacenamiento 22,5 GW · electrolizadores 12 GW para hidrógeno renovable",
+      "5,5 millones de vehículos eléctricos · 1,38 millones de viviendas rehabilitadas",
+      "Impacto estimado: unos 308.000 M€ de inversión movilizada y hasta 560.000 empleos"
+    ]
+  },
+  {
+    id: "g3t5-c5", tema: 5, tipo: "Concepto",
+    tag: "T5 · Concepto · Retos de integración",
+    front: "Retos de la transición energética: integración, sistema y dimensión social.",
+    back: [
+      "Sectores difíciles de abatir: siderurgia (hidrógeno + horno de arco), cemento (emisiones de proceso → captura), química, aviación y marítimo (combustibles sintéticos)",
+      "Integración: vertidos o curtailment, horas de precio cero o negativo, necesidad de flexibilidad (almacenamiento, gestión de demanda, interconexiones)",
+      "Cuellos de botella reales: capacidad de acceso y conexión a la red, plazos de tramitación, aceptación social y territorio",
+      "Estabilidad: inercia, control de tensión y potencia de cortocircuito con alta penetración no síncrona — debate reforzado tras el incidente peninsular de abril de 2025",
+      "Dimensión social: transición justa para comarcas mineras y centrales en cierre, pobreza energética, Instituto para la Transición Justa"
+    ]
+  },
+  {
+    id: "g3t5-c6", tema: 5, tipo: "Concepto",
+    tag: "T5 · Concepto · Digitalización energética",
+    front: "Digitalización y energía: aplicaciones por ámbito y contrapartidas.",
+    back: [
+      "Idea central: la transición es técnicamente un problema de coordinación de millones de dispositivos; solo es viable con digitalización",
+      "Red: contadores inteligentes y telegestión, sensorización de subestaciones, automatización de la distribución, gemelos digitales de red",
+      "Demanda: gestión activa y respuesta a precios, agregador independiente, comunidades energéticas, autoconsumo colectivo, vehículo eléctrico con recarga bidireccional",
+      "Generación: predicción de producción con aprendizaje automático, mantenimiento predictivo (crítico en eólica marina)",
+      "Contrapartidas: ciberseguridad (NIS2 y código de red de ciberseguridad) y el consumo eléctrico de centros de datos e IA",
+      "Frase de cierre del tema: el trilema energético — seguridad de suministro, sostenibilidad y asequibilidad"
+    ]
+  },
+
   /* ==================== ENLACES ENTRE TEMAS ==================== */
   {
     id: "x-enlace-1", tema: 0, tipo: "Enlace",
@@ -1224,8 +1857,11 @@ async function saveProgress(){
 function renderFilters(){
   const temas = [
     { v:"todos", l:"Todos" },
-    { v:"1", l:"Tema 1" },
-    { v:"2", l:"Tema 2" },
+    { v:"1", l:"T1" },
+    { v:"2", l:"T2" },
+    { v:"3", l:"T3" },
+    { v:"4", l:"T4" },
+    { v:"5", l:"T5" },
     { v:"0", l:"Transversal" }
   ];
   temaFilters.innerHTML = '<span class="filter-label">Tema</span>' + temas.map(t =>
@@ -1406,6 +2042,14 @@ function importProgress(file){
   reader.readAsText(file);
 }
 
+function goTo(delta){
+  if(answering) return;
+  const target = currentIndex + delta;
+  if(target < 0 || target > queue.length) return;
+  currentIndex = target;
+  renderCard();
+}
+
 function renderCard(){
   renderFooter();
   if(currentIndex >= queue.length){
@@ -1431,10 +2075,16 @@ function renderCard(){
       </div>
       <button class="btn btn-flip" id="flipBtn">Girar ficha</button>
     </div>
-    <p class="kbd-note">Espacio: girar · ←: no me acuerdo · →: lo sé</p>
+    <p class="kbd-note">Espacio: girar · ←/→: navegar entre fichas · 1: no me acuerdo · 2: lo sé</p>
+    <div class="nav-row">
+      <button class="btn-nav" id="prevBtn" ${currentIndex === 0 ? "disabled" : ""}>← Anterior</button>
+      <button class="btn-nav" id="nextBtn">Siguiente →</button>
+    </div>
   `;
 
   document.getElementById("questionText").textContent = card.front;
+  document.getElementById("prevBtn").addEventListener("click", (e) => { e.stopPropagation(); goTo(-1); });
+  document.getElementById("nextBtn").addEventListener("click", (e) => { e.stopPropagation(); goTo(1); });
 
   const cardEl = document.getElementById("cardEl");
   const flipBtn = document.getElementById("flipBtn");
@@ -1506,6 +2156,7 @@ function renderEmptyState(){
       <h2>${allDone ? "Repaso de hoy completado" : "Fin de la ronda"}</h2>
       <p>${allDone ? "No quedan fichas pendientes en esta selección. Cambia de filtro, vuelve mañana o repasa todas otra vez." : "Has repasado el mazo completo con estos filtros."}</p>
       <button class="link-btn" id="againBtn">Repasar todas las fichas otra vez</button>
+      ${queue.length > 0 ? '<br><button class="link-btn" id="backBtn" style="margin-top:12px">← Volver a la última ficha</button>' : ''}
     </div>
   `;
   document.getElementById("againBtn").addEventListener("click", () => {
@@ -1513,10 +2164,16 @@ function renderEmptyState(){
     buildQueue();
     renderCard();
   });
+  const backBtn = document.getElementById("backBtn");
+  if(backBtn) backBtn.addEventListener("click", () => goTo(-1));
 }
 
 document.addEventListener("keydown", (e) => {
-  if(currentIndex >= queue.length) return;
+  if(queue.length === 0) return;
+
+  if(e.key === "ArrowLeft"){ e.preventDefault(); goTo(-1); return; }
+  if(e.key === "ArrowRight"){ e.preventDefault(); goTo(1); return; }
+
   const card = queue[currentIndex];
   if(!card) return;
 
@@ -1524,10 +2181,10 @@ document.addEventListener("keydown", (e) => {
     e.preventDefault();
     flipped = true;
     showBack(card);
-  } else if(flipped && (e.key === "ArrowLeft" || e.key === "1")){
+  } else if(flipped && e.key === "1"){
     e.preventDefault();
     answer(card, false);
-  } else if(flipped && (e.key === "ArrowRight" || e.key === "2")){
+  } else if(flipped && e.key === "2"){
     e.preventDefault();
     answer(card, true);
   }
