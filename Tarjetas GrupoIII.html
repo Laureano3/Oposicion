@@ -1,0 +1,1551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Fichas de repaso — Oposición Ingenieros Industriales del Estado</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#E9EDEC">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Fichas OPO">
+<meta name="description" content="Fichas de repaso espaciado (sistema Leitner) para el tercer ejercicio del Cuerpo de Ingenieros Industriales del Estado.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  --bg:#E9EDEC;
+  --paper:#FDFDFB;
+  --ink:#16262B;
+  --muted:#5B6B6E;
+  --hair:#D6DBD8;
+  --accent:#2F6F5E;
+  --accent-dark:#1E4A3F;
+  --accent-bg:#E1EEE9;
+  --danger:#A23B3B;
+  --danger-bg:#F5E4E2;
+  --brass:#B08D57;
+  --brass-bg:#F3ECDE;
+}
+
+*{ box-sizing: border-box; }
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter', sans-serif;
+  min-height:100vh;
+  padding:32px 16px 64px;
+}
+
+.wrap{ max-width:640px; margin:0 auto; }
+
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:0 0 4px;
+}
+
+h1{
+  font-family:'Source Serif 4', serif;
+  font-weight:600;
+  font-size:26px;
+  margin:0 0 20px;
+  color:var(--ink);
+}
+
+.filters{ margin-bottom:18px; }
+
+.filter-row{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex-wrap:wrap;
+  margin-bottom:8px;
+}
+
+.filter-label{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-right:4px;
+  min-width:48px;
+}
+
+.chip{
+  font-family:'Inter', sans-serif;
+  font-size:12.5px;
+  padding:5px 11px;
+  border-radius:20px;
+  border:1px solid var(--hair);
+  background:var(--paper);
+  color:var(--muted);
+  cursor:pointer;
+  transition:all 0.12s ease;
+}
+
+.chip:hover{ border-color:var(--accent); }
+
+.chip.active{
+  background:var(--accent-bg);
+  border-color:var(--accent);
+  color:var(--accent-dark);
+  font-weight:500;
+}
+
+.stats-bar{
+  display:flex;
+  gap:8px;
+  margin-bottom:22px;
+  flex-wrap:wrap;
+}
+
+.stat-pill{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  padding:6px 10px;
+  border:1px solid var(--hair);
+  border-radius:6px;
+  background:var(--paper);
+  color:var(--muted);
+  white-space:nowrap;
+}
+
+.stat-pill b{ color:var(--ink); font-weight:600; }
+
+.progress-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  margin-bottom:10px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  color:var(--muted);
+}
+
+.card{
+  position:relative;
+  background:var(--paper);
+  border:1px solid var(--hair);
+  border-radius:4px;
+  box-shadow: 0 1px 0 var(--hair), 0 8px 0 -6px rgba(0,0,0,0.04);
+  padding:36px 32px 28px;
+  min-height:300px;
+  display:flex;
+  flex-direction:column;
+  cursor:pointer;
+  overflow:hidden;
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  left:0; top:0; bottom:0;
+  width:4px;
+  background:var(--accent);
+}
+
+.card.tipo-dato::before{ background:var(--brass); }
+.card.tipo-norma::before{ background:#3E5C8A; }
+
+.card-tag{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--accent-dark);
+  background:var(--accent-bg);
+  display:inline-block;
+  padding:3px 8px;
+  border-radius:4px;
+  margin-bottom:18px;
+  width:fit-content;
+}
+
+.card.tipo-dato .card-tag{ color:#6E5527; background:var(--brass-bg); }
+.card.tipo-norma .card-tag{ color:#2A3F60; background:#E3E9F2; }
+
+.card-face{ flex:1; display:flex; flex-direction:column; }
+
+.question{
+  font-family:'Source Serif 4', serif;
+  font-size:19px;
+  line-height:1.5;
+  color:var(--ink);
+  margin:0;
+  flex:1;
+  white-space:pre-line;
+}
+
+.hint{
+  font-family:'Inter', sans-serif;
+  font-size:13px;
+  color:var(--muted);
+  margin-top:20px;
+}
+
+.answer-list{
+  font-family:'Source Serif 4', serif;
+  font-size:16.5px;
+  line-height:1.65;
+  margin:0;
+  padding-left:20px;
+  color:var(--ink);
+}
+
+.answer-list li{ margin-bottom:6px; }
+
+.actions{ display:flex; gap:12px; margin-top:24px; }
+
+.btn{
+  flex:1;
+  font-family:'Inter', sans-serif;
+  font-weight:500;
+  font-size:14px;
+  padding:13px 16px;
+  border-radius:6px;
+  border:1px solid var(--hair);
+  background:var(--paper);
+  cursor:pointer;
+  transition:transform 0.08s ease;
+}
+
+.btn:active{ transform:scale(0.98); }
+
+.btn-danger{ border-color:var(--danger); color:var(--danger); background:var(--danger-bg); }
+.btn-success{ border-color:var(--accent); color:var(--accent-dark); background:var(--accent-bg); }
+.btn-flip{ width:100%; margin-top:24px; border-color:var(--ink); color:var(--ink); }
+
+.kbd-note{
+  text-align:center;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:11px;
+  color:var(--muted);
+  margin-top:12px;
+}
+
+.stamp{
+  position:absolute;
+  top:30px;
+  right:28px;
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  border:2px solid;
+  border-radius:50%;
+  width:74px;
+  height:74px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  line-height:1.15;
+  transform:rotate(8deg) scale(0);
+  opacity:0;
+  pointer-events:none;
+}
+
+.stamp.show{ animation: stamp-in 0.32s cubic-bezier(.2,1.4,.4,1) forwards; }
+
+@keyframes stamp-in{
+  0%{ transform:rotate(8deg) scale(2); opacity:0; }
+  60%{ transform:rotate(8deg) scale(0.92); opacity:1; }
+  100%{ transform:rotate(8deg) scale(1); opacity:1; }
+}
+
+.stamp-success{ color:var(--accent); border-color:var(--accent); }
+.stamp-danger{ color:var(--danger); border-color:var(--danger); }
+
+.empty-state{
+  text-align:center;
+  padding:60px 24px;
+  background:var(--paper);
+  border:1px solid var(--hair);
+  border-radius:4px;
+}
+
+.empty-state h2{ font-family:'Source Serif 4', serif; font-size:20px; margin:0 0 8px; }
+.empty-state p{ color:var(--muted); font-size:14px; margin:0 0 20px; }
+
+.link-btn{
+  font-family:'Inter', sans-serif;
+  font-size:13px;
+  color:var(--accent-dark);
+  background:none;
+  border:none;
+  text-decoration:underline;
+  cursor:pointer;
+  padding:0;
+}
+
+.footer-note{
+  text-align:center;
+  margin-top:20px;
+  font-size:12px;
+  color:var(--muted);
+  display:flex;
+  gap:14px 18px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.footer-sep{
+  color:var(--hair);
+  user-select:none;
+}
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:calc(24px + env(safe-area-inset-bottom, 0px));
+  transform:translateX(-50%) translateY(12px);
+  background:var(--ink);
+  color:var(--paper);
+  font-family:'Inter', sans-serif;
+  font-size:13px;
+  line-height:1.45;
+  padding:11px 16px;
+  border-radius:8px;
+  max-width:min(90vw, 420px);
+  text-align:center;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity 0.18s ease, transform 0.18s ease;
+  z-index:50;
+}
+
+.toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
+.toast-error{ background:var(--danger); }
+
+.loading{
+  text-align:center;
+  padding:60px 0;
+  color:var(--muted);
+  font-family:'IBM Plex Mono', monospace;
+  font-size:13px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .stamp.show{ animation:none; opacity:1; transform:rotate(8deg) scale(1); }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">Repaso espaciado · Sistema Leitner</p>
+  <h1>Fichas de repaso — Tercer ejercicio</h1>
+
+  <div class="filters">
+    <div class="filter-row" id="temaFilters"><span class="filter-label">Tema</span></div>
+    <div class="filter-row" id="tipoFilters"><span class="filter-label">Tipo</span></div>
+  </div>
+
+  <div class="stats-bar" id="statsBar"></div>
+  <div id="app"><div class="loading">Cargando progreso...</div></div>
+  <p class="footer-note" id="resetRow"></p>
+</div>
+
+<script>
+const CARDS = [
+  /* ==================== GRUPO III · TEMA 1 ==================== */
+  {
+    id: "g3t1-skeleton", tema: 1, tipo: "Estructura",
+    tag: "T1 · Esqueleto completo",
+    front: "La industria en el contexto de la economía española.\n\nReconstruye el índice completo: lista los epígrafes en orden con su tiempo aproximado.",
+    back: [
+      "0. Apertura (1 min)",
+      "1. Actividades que comprende (2 min)",
+      "2. Indicadores relevantes / Panorama sectorial (3 min)",
+      "3. Composición sectorial interna (2-2,5 min)",
+      "4. Distribución geográfica (2 min)",
+      "5. Contexto internacional (3 min)",
+      "6. PYME industrial y ETI (2,5 min)",
+      "7. Industria y energía / medio ambiente (2,5 min)",
+      "8. Evolución, situación actual y tendencias (2,5 min)",
+      "9. Cierre (1 min)"
+    ]
+  },
+  {
+    id: "g3t1-e0", tema: 1, tipo: "Estructura",
+    tag: "T1 · Epígrafe 0",
+    front: "Apertura (1 min) — ¿qué idea debes transmitir?",
+    back: [
+      "España: modelo de servicios/turismo",
+      "Industria pierde peso pero sigue siendo estratégica: productividad, empleo estable, exportaciones",
+      "Justifica la política industrial (enlace a Tema 2 del Grupo V)"
+    ]
+  },
+  {
+    id: "g3t1-e1", tema: 1, tipo: "Estructura",
+    tag: "T1 · Epígrafe 1",
+    front: "Actividades que comprende (2 min) — ¿qué tienes que distinguir?",
+    back: [
+      "Los tres niveles de 'industria': manufactura estricta / sin construcción / con construcción",
+      "Dónde pones el foco en este tema: manufactura, dejando energía para sus temas específicos"
+    ]
+  },
+  {
+    id: "g3t1-e2", tema: 1, tipo: "Estructura",
+    tag: "T1 · Epígrafe 2",
+    front: "Indicadores relevantes / Panorama sectorial (3 min) — ¿qué bloques de datos cubres?",
+    back: [
+      "Serie histórica de VAB (2000 → hoy)",
+      "Empleo y número de empresas",
+      "Exportaciones industriales",
+      "Productividad: comparación interna (vs. servicios) y externa (vs. UE)"
+    ]
+  },
+  {
+    id: "g3t1-e3", tema: 1, tipo: "Estructura",
+    tag: "T1 · Epígrafe 3",
+    front: "Composición sectorial interna (2-2,5 min) — ¿qué cubres?",
+    back: [
+      "Ramas que concentran la producción manufacturera",
+      "Especialización relativa frente a la UE",
+      "Infrarrepresentación en ciertas ramas",
+      "Comparación de perfil sectorial con Alemania"
+    ]
+  },
+  {
+    id: "g3t1-e4", tema: 1, tipo: "Estructura",
+    tag: "T1 · Epígrafe 4",
+    front: "Distribución geográfica (2 min) — ¿qué cubres?",
+    back: [
+      "CCAA con mayor y menor peso industrial",
+      "Principales clústeres sectoriales por territorio"
+    ]
+  },
+  {
+    id: "g3t1-e5", tema: 1, tipo: "Estructura",
+    tag: "T1 · Epígrafe 5",
+    front: "Contexto internacional (3 min) — ¿qué cubres?",
+    back: [
+      "Objetivo UE del 20% y si se cumplió",
+      "Comparativa con la media UE y otros países",
+      "Evolución del peso industrial en la UE en su conjunto"
+    ]
+  },
+  {
+    id: "g3t1-e6", tema: 1, tipo: "Estructura",
+    tag: "T1 · Epígrafe 6",
+    front: "PYME industrial y ETI (2,5 min) — ¿qué cubres?",
+    back: [
+      "Peso de la PYME en empresas vs. en empleo",
+      "Qué son las ETI y su peso agregado",
+      "Peso de la industria dentro del universo ETI",
+      "Por qué importan para la reindustrialización"
+    ]
+  },
+  {
+    id: "g3t1-e7", tema: 1, tipo: "Estructura",
+    tag: "T1 · Epígrafe 7",
+    front: "Industria y energía / medio ambiente (2,5 min) — ¿qué cubres?",
+    back: [
+      "Coste energético como factor de competitividad",
+      "Descarbonización industrial",
+      "Instrumentos: PERTE",
+      "Economía circular y digitalización sostenible"
+    ]
+  },
+  {
+    id: "g3t1-e8", tema: 1, tipo: "Estructura",
+    tag: "T1 · Epígrafe 8",
+    front: "Evolución, situación actual y tendencias (2,5 min) — ¿qué cubres?",
+    back: [
+      "Impacto de la crisis de 2008",
+      "Indicadores adelantados recientes",
+      "Respuesta de política pública (Nueva Política Industrial 2030)",
+      "Problema estructural asociado (logística ferroviaria)"
+    ]
+  },
+  {
+    id: "g3t1-e9", tema: 1, tipo: "Estructura",
+    tag: "T1 · Epígrafe 9",
+    front: "Cierre (1 min) — ¿qué mensaje final das?",
+    back: [
+      "Síntesis: industria debilitada estructuralmente, especialización de menor valor añadido",
+      "Pero con batería de instrumentos activos",
+      "Enlace explícito a la política industrial"
+    ]
+  },
+  {
+    id: "g3t1-d1", tema: 1, tipo: "Dato",
+    tag: "T1 · Dato · Peso en la economía",
+    front: "Los tres niveles de 'industria' en el PIB/VAB español: ¿qué porcentaje corresponde a cada uno?",
+    back: [
+      "Manufactura estricta (sección C): ~11-12%",
+      "Industria sin construcción (extractivas + manufactura + energía + agua): ~14,2%",
+      "Industria + construcción: ~19,5-20% (construcción aporta ~5,3%)"
+    ]
+  },
+  {
+    id: "g3t1-d2", tema: 1, tipo: "Dato",
+    tag: "T1 · Dato · Serie histórica",
+    front: "Serie histórica del peso de la manufactura en el VAB: da los tres hitos y la caída acumulada.",
+    back: [
+      "2000: 17,9%",
+      "2022: 12,5%",
+      "2024/25: 11,8%",
+      "Caída acumulada: −6,1 puntos porcentuales en 25 años",
+      "Punto de inflexión: crisis financiera de 2008"
+    ]
+  },
+  {
+    id: "g3t1-d3", tema: 1, tipo: "Dato",
+    tag: "T1 · Dato · Empleo y tejido",
+    front: "Empleo industrial y tejido empresarial: cuatro cifras.",
+    back: [
+      "Menos del 10% de la ocupación total",
+      "−723.500 empleos desde 2000 (−25%)",
+      "Más de 150.000 empresas manufactureras (4,8% del tejido productivo)",
+      "2,17 millones de empleados en manufactura"
+    ]
+  },
+  {
+    id: "g3t1-d4", tema: 1, tipo: "Dato",
+    tag: "T1 · Dato · Exportaciones",
+    front: "Exportaciones industriales: las dos cifras que no puedes confundir.",
+    back: [
+      "Exportaciones industriales / PIB: 20,3% en España vs. 31,1% de media UE-27 (menor industrialización relativa)",
+      "Peso de la industria en las exportaciones españolas de bienes: 84%",
+      "Mensaje: papel desproporcionado en el sector exterior"
+    ]
+  },
+  {
+    id: "g3t1-d5", tema: 1, tipo: "Dato",
+    tag: "T1 · Dato · Productividad",
+    front: "Brechas de productividad industrial de España. ¿Frente a quién y cuánto?",
+    back: [
+      "Frente a la media UE-27: −5,4%",
+      "Frente a Alemania: −29%",
+      "Frente a Francia: −16%",
+      "Ojo: son comparaciones distintas, no las mezcles. Internamente, la industria es MÁS productiva que los servicios"
+    ]
+  },
+  {
+    id: "g3t1-d6", tema: 1, tipo: "Dato",
+    tag: "T1 · Dato · Composición sectorial",
+    front: "Las cinco ramas que concentran ~60-65% de la producción manufacturera (2022), con su porcentaje.",
+    back: [
+      "Agroalimentaria: 19,4%",
+      "Metalurgia y productos metálicos: 12,7%",
+      "Química y farmacéutica: 12,1%",
+      "Material de transporte: 11,8%",
+      "Caucho, plásticos y minerales no metálicos: 9,3%"
+    ]
+  },
+  {
+    id: "g3t1-d7", tema: 1, tipo: "Dato",
+    tag: "T1 · Dato · Especialización vs. UE",
+    front: "Especialización e infrarrepresentación de la industria española frente a la UE-27.",
+    back: [
+      "Sobrerrepresentación: agroalimentario +8,4 p.p.; también textil y caucho/plásticos",
+      "Infrarrepresentación: maquinaria y equipo pesa la mitad que la media europea",
+      "Productos informáticos, electrónicos y ópticos: hasta seis veces menos"
+    ]
+  },
+  {
+    id: "g3t1-d8", tema: 1, tipo: "Dato",
+    tag: "T1 · Dato · Comparación con Alemania",
+    front: "Comparación del perfil sectorial España vs. Alemania: dos contrastes con cifras.",
+    back: [
+      "Metalurgia + vehículos + química: 21% de la manufactura española vs. 30,7% en Alemania",
+      "Textil: 6,8% en España vs. 1,1% en Alemania",
+      "Lectura: especialización española de menor valor añadido medio → explica parte de la brecha de productividad"
+    ]
+  },
+  {
+    id: "g3t1-d9", tema: 1, tipo: "Dato",
+    tag: "T1 · Dato · Geografía",
+    front: "Distribución geográfica de la industria (definición amplia, media nacional ~20%): líderes, cola y clústeres.",
+    back: [
+      "Líder: Navarra ~32% (agroalimentario, eje del Ebro)",
+      "Cola: Ceuta y Melilla <10%; Canarias y Madrid ~11-12%",
+      "Automoción: Cataluña, País Vasco, eje Aragón-Navarra",
+      "Siderurgia y metal: País Vasco, Asturias · Cerámica: Castellón · Química: Tarragona"
+    ]
+  },
+  {
+    id: "g3t1-d10", tema: 1, tipo: "Dato",
+    tag: "T1 · Dato · Objetivo UE 20%",
+    front: "El objetivo europeo del 20% del PIB para la industria manufacturera: fechas, refuerzo y resultado.",
+    back: [
+      "Fijado en 2012, reforzado en la Comunicación de 2014 «Por un renacimiento industrial europeo», horizonte 2020",
+      "No se cumplió: media UE-27 en manufactura ~15,7%; España 11-12%",
+      "Con definición amplia: España e Italia 20-25%; Francia y Reino Unido por debajo del 20%"
+    ]
+  },
+  {
+    id: "g3t1-d11", tema: 1, tipo: "Dato",
+    tag: "T1 · Dato · Tendencia mundial",
+    front: "Evolución del peso industrial a escala UE y quién es la excepción mundial.",
+    back: [
+      "UE (definición amplia): de cerca del 30% a finales del s. XX al 23% en 2023 — tendencia continental, no solo española",
+      "Alemania mantiene su industria relativamente resiliente",
+      "China: única gran economía que ha ganado peso manufacturero (~31% de su PIB)"
+    ]
+  },
+  {
+    id: "g3t1-d12", tema: 1, tipo: "Dato",
+    tag: "T1 · Dato · PYME y ETI",
+    front: "PYME industrial y empresas de tamaño intermedio (ETI): las cifras clave.",
+    back: [
+      "99,8% de las empresas españolas son PYME, pero solo generan el 60,7% del empleo (regla «60/40»)",
+      "ETI: ~3.300 empresas, 221.000 M€ de facturación (~18% del PIB), ~1 millón de empleos",
+      "32% de las ETI son industriales vs. 6% de media general → ~744 ETI industriales",
+      "Concentración: agroalimentario ~30%; con metalurgia, química y energía, más del 60%"
+    ]
+  },
+  {
+    id: "g3t1-d13", tema: 1, tipo: "Dato",
+    tag: "T1 · Dato · Instrumentos de política",
+    front: "Instrumentos de política industrial que debes citar en el epígrafe 8 y en el cierre.",
+    back: [
+      "Nueva Política Industrial Española 2030: 5 vectores (productividad/competitividad, peso en PIB, sostenibilidad, digitalización, alineamiento UE)",
+      "3 iniciativas: Pacto de Estado por la Industria · Estrategia de Política Industrial 2030 · nueva Ley de Industria (sustituye a la Ley 21/1992)",
+      "PERTE Chip y PERTE VEC · España Circular 2030 (ahorro estimado UE: 600.000 M€) · Industria Conectada 4.0",
+      "Dato estructural: cuota ferroviaria de mercancías ~5% vs. 18% media UE"
+    ]
+  },
+
+  /* ==================== GRUPO III · TEMA 2 ==================== */
+  {
+    id: "g3t2-skeleton", tema: 2, tipo: "Estructura",
+    tag: "T2 · Esqueleto completo",
+    front: "Estadísticas industriales: fuentes y metodología.\n\nReconstruye el índice completo: lista los epígrafes en orden con su tiempo aproximado.",
+    back: [
+      "0. Apertura (1 min)",
+      "1. Estadísticas industriales: fuentes y metodología (3 min)",
+      "2. Estadísticas estructurales (2,5 min)",
+      "3. Estadísticas coyunturales (2,5 min)",
+      "4. Análisis de coyuntura industrial (2 min)",
+      "5. Análisis de intersectorialidad (3 min)",
+      "6. Cadenas globales de valor y TiVA (3 min)",
+      "7. Estadísticas energéticas: fuentes y metodología (2,5 min)",
+      "8. Indicadores sintéticos de industria y energía (2,5 min)",
+      "9. Cierre (1 min)"
+    ]
+  },
+  {
+    id: "g3t2-e0", tema: 2, tipo: "Estructura",
+    tag: "T2 · Epígrafe 0",
+    front: "Apertura (1 min) — ¿qué idea de encuadre y qué tres claves anuncias?",
+    back: [
+      "Encuadre: sin medición no hay política industrial — la estadística es la infraestructura de información del diagnóstico (Tema 1), del diseño (Grupo V) y de la evaluación (Grupo IV)",
+      "Clave 1: ámbito armonizado por reglamentos UE, de aplicación directa",
+      "Clave 2: trade-off permanente detalle/precisión (estructurales) vs. oportunidad (coyunturales)",
+      "Clave 3: salto metodológico — de ver la industria como sector aislado a verla como red (input-output, TiVA, indicadores sintéticos)"
+    ]
+  },
+  {
+    id: "g3t2-e1", tema: 2, tipo: "Estructura",
+    tag: "T2 · Epígrafe 1",
+    front: "Fuentes y metodología (3 min) — ¿qué cinco bloques recorres?",
+    back: [
+      "Base competencial y ley nacional (LFEP)",
+      "Planificación: PEN y programas anuales",
+      "Marco europeo: Reglamento 223/2009, SEE, Código de Buenas Prácticas",
+      "Norma sectorial: Reglamento de estadísticas empresariales europeas (EBS)",
+      "Clasificaciones (CNAE-2025 y nomenclaturas), productores y cuestiones metodológicas"
+    ]
+  },
+  {
+    id: "g3t2-e2", tema: 2, tipo: "Estructura",
+    tag: "T2 · Epígrafe 2",
+    front: "Estadísticas estructurales (2,5 min) — ¿qué caracterización y qué operaciones?",
+    back: [
+      "Caracterización: anuales, muy detalladas, retardo de 18-24 meses",
+      "Operación de referencia: Estadística Estructural de Empresas: sector industrial",
+      "Productos (PRODCOM), directorio (DIRCE), Contabilidad Nacional y Marco Input-Output",
+      "Innovación e I+D, TIC, consumos energéticos, Central de Balances",
+      "Cierre del epígrafe: de aquí salen todas las cifras del Tema 1"
+    ]
+  },
+  {
+    id: "g3t2-e3", tema: 2, tipo: "Estructura",
+    tag: "T2 · Epígrafe 3",
+    front: "Estadísticas coyunturales (2,5 min) — ¿cómo organizas el epígrafe?",
+    back: [
+      "Caracterización: mensual/trimestral, en números índice, base 2021",
+      "Bloque cuantitativo: IPI, IPRI, ICN y entrada de pedidos, más indicadores de alta frecuencia",
+      "Bloque cualitativo: ECI e ICI, ICE del INE, ESI europeo, PMI",
+      "Contraste final: inmediatez y estabilidad de los cualitativos vs. magnitud de los cuantitativos"
+    ]
+  },
+  {
+    id: "g3t2-e4", tema: 2, tipo: "Estructura",
+    tag: "T2 · Epígrafe 4",
+    front: "Análisis de coyuntura industrial (2 min) — ¿qué cubres?",
+    back: [
+      "Objetivo: separar señal de ruido y anticipar puntos de giro",
+      "Descomposición de series y desestacionalización",
+      "Tipos de tasa y efecto base",
+      "Clasificación adelantados / coincidentes / retrasados; índices de difusión",
+      "Herramientas modernas (nowcasting) y aplicación al caso español reciente"
+    ]
+  },
+  {
+    id: "g3t2-e5", tema: 2, tipo: "Estructura",
+    tag: "T2 · Epígrafe 5",
+    front: "Intersectorialidad (3 min) — ¿qué secuencia sigues?",
+    back: [
+      "Planteamiento: el peso de la industria no se agota en su VAB directo",
+      "Instrumento: Marco Input-Output dentro de la Contabilidad Nacional",
+      "Formalización de Leontief y multiplicadores",
+      "Encadenamientos e índices de Rasmussen: tipología de sectores",
+      "Situación española, lectura de política, otras aplicaciones y limitaciones"
+    ]
+  },
+  {
+    id: "g3t2-e6", tema: 2, tipo: "Estructura",
+    tag: "T2 · Epígrafe 6",
+    front: "Cadenas globales de valor y TiVA (3 min) — ¿qué cubres?",
+    back: [
+      "Problema que resuelve: doble contabilización del comercio bruto",
+      "Metodología: tablas interpaís (ICIO) y base TiVA OCDE-OMC; alternativas y panel del INE",
+      "Indicadores de participación hacia atrás y hacia adelante",
+      "Situación de España y contenido de servicios en las exportaciones",
+      "Implicaciones de política y curva de la sonrisa"
+    ]
+  },
+  {
+    id: "g3t2-e7", tema: 2, tipo: "Estructura",
+    tag: "T2 · Epígrafe 7",
+    front: "Estadísticas energéticas (2,5 min) — ¿qué cubres?",
+    back: [
+      "Marco normativo europeo y cuestionarios conjuntos",
+      "Cuestiones metodológicas: unidades y contabilización",
+      "El balance energético y sus tres bloques",
+      "Fuentes nacionales e internacionales",
+      "Indicadores derivados y nexo con la industria (ramas electrointensivas)"
+    ]
+  },
+  {
+    id: "g3t2-e8", tema: 2, tipo: "Estructura",
+    tag: "T2 · Epígrafe 8",
+    front: "Indicadores sintéticos (2,5 min) — ¿qué cubres?",
+    back: [
+      "Concepto: agregar indicadores simples para medir un fenómeno multidimensional",
+      "Metodología: manual OCDE-JRC y sus pasos críticos",
+      "Ventajas y riesgos",
+      "Ejemplos en industria y en energía",
+      "Uso institucional: seguimiento de objetivos y evaluación de políticas"
+    ]
+  },
+  {
+    id: "g3t2-e9", tema: 2, tipo: "Estructura",
+    tag: "T2 · Epígrafe 9",
+    front: "Cierre (1 min) — ¿qué tres ideas y qué enlace final?",
+    back: [
+      "1. La estadística es infraestructura pública regulada por la UE y planificada por el PEN",
+      "2. Del sector aislado a la red: la industria arrastra más de lo que pesa y está más expuesta de lo que dice el comercio bruto",
+      "3. Los indicadores sintéticos sintetizan y comunican, pero exigen rigor metodológico",
+      "Enlace: el diagnóstico del Tema 1 se apoya en estas fuentes; la política del Grupo V solo se evalúa con ellas"
+    ]
+  },
+  {
+    id: "g3t2-n1", tema: 2, tipo: "Norma",
+    tag: "T2 · Norma · Marco nacional",
+    front: "Marco jurídico nacional de la estadística: base competencial, ley y sus principios.",
+    back: [
+      "Art. 149.1.31.ª CE: competencia exclusiva del Estado sobre estadística para fines estatales",
+      "Ley 12/1989, de 9 de mayo, de la Función Estadística Pública (LFEP)",
+      "Principios: secreto estadístico, transparencia, especialidad y proporcionalidad",
+      "Establece la obligación de suministro de información y el régimen sancionador"
+    ]
+  },
+  {
+    id: "g3t2-n2", tema: 2, tipo: "Norma",
+    tag: "T2 · Norma · Planificación",
+    front: "Instrumentos de planificación estadística: ¿cuáles son y con qué normas concretas?",
+    back: [
+      "Plan Estadístico Nacional, cuatrienal: PEN 2025-2028, aprobado por Real Decreto 1225/2024, de 3 de diciembre",
+      "Programas anuales: RD 72/2025 (año 2025) y RD 55/2026 (año 2026)",
+      "Las estadísticas exigidas por normativa europea se incluyen automáticamente en el PEN",
+      "Complemento: Inventario de Operaciones Estadísticas (IOE)"
+    ]
+  },
+  {
+    id: "g3t2-n3", tema: 2, tipo: "Norma",
+    tag: "T2 · Norma · Marco europeo",
+    front: "Marco europeo general de la estadística: artículo del Tratado, reglamento, sistema y código.",
+    back: [
+      "Art. 338 TFUE",
+      "Reglamento (CE) 223/2009 relativo a la estadística europea: crea el Sistema Estadístico Europeo (Eurostat + institutos nacionales) y consagra la independencia profesional",
+      "Código de Buenas Prácticas de las Estadísticas Europeas: 16 principios (entorno institucional, procesos y productos)",
+      "Criterios de calidad: pertinencia · precisión · oportunidad y puntualidad · accesibilidad y claridad · comparabilidad y coherencia"
+    ]
+  },
+  {
+    id: "g3t2-n4", tema: 2, tipo: "Norma",
+    tag: "T2 · Norma · Estadísticas empresariales",
+    front: "¿Cuál es la norma europea clave para las estadísticas industriales y qué consolidó?",
+    back: [
+      "Reglamento (UE) 2019/2152, de estadísticas empresariales europeas (EBS, conocido como FRIBS)",
+      "Integra y simplifica una decena de reglamentos previos: estructurales, coyunturales, Prodcom e Intrastat",
+      "Desarrollado por el Reglamento de Ejecución (UE) 2020/1197",
+      "Consecuencia práctica visible: cambio de base de los índices coyunturales al año 2021"
+    ]
+  },
+  {
+    id: "g3t2-n5", tema: 2, tipo: "Norma",
+    tag: "T2 · Norma · CNAE",
+    front: "Clasificación de actividades: norma vigente, equivalencia europea y secciones industriales.",
+    back: [
+      "CNAE-2025, aprobada por Real Decreto 10/2025, de 14 de enero — adaptación de la NACE Rev. 2.1",
+      "Sustituye a la CNAE-2009 tras dieciséis años; registros administrativos estatales adaptados antes del 1 de enero de 2027",
+      "Industria = secciones B (extractivas), C (manufacturera), D (energía) y E (agua y residuos)"
+    ]
+  },
+  {
+    id: "g3t2-c1", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Nomenclaturas",
+    front: "Más allá de la CNAE: nomenclaturas de productos, de comercio y agrupaciones analíticas.",
+    back: [
+      "Productos: PRODCOM (producción industrial) y CPA (productos por actividad)",
+      "Comercio exterior: Nomenclatura Combinada / TARIC y CUCI (SITC)",
+      "Agrupaciones analíticas: destino económico de los bienes o MIGs — consumo duradero, consumo no duradero, equipo, intermedios y energía",
+      "Clasificación por intensidad tecnológica de Eurostat-OCDE: alta, media-alta, media-baja y baja"
+    ]
+  },
+  {
+    id: "g3t2-c2", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Productores",
+    front: "¿Quién produce la estadística industrial en España? Cita al menos cinco productores y su aportación.",
+    back: [
+      "INE: núcleo del sistema (organismo autónomo adscrito al M.º de Economía, Comercio y Empresa)",
+      "MINTUR: Encuesta de Coyuntura Industrial, Encuesta de Inversiones Industriales, boletín estadístico, Registro Integrado Industrial",
+      "Banco de España: Central de Balances (dimensión económico-financiera)",
+      "AEAT-Aduanas: comercio exterior (DataComex) · TGSS: afiliación",
+      "Internacionales: Eurostat, OCDE, ONUDI, UNSD"
+    ]
+  },
+  {
+    id: "g3t2-c3", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Metodología",
+    front: "Cuestiones metodológicas transversales: tipos de operación, muestreo y unidad estadística.",
+    back: [
+      "Operaciones censales, muestrales y basadas en registros administrativos",
+      "Muestreo por corte o cut-off, habitual en industria por la concentración de la producción",
+      "Unidad estadística: empresa, unidad de actividad económica local o establecimiento — la industria se mide con frecuencia por establecimiento, lo que explica discrepancias entre fuentes",
+      "Tendencias: registros administrativos para reducir carga, estadísticas experimentales, integración de fuentes y datos masivos"
+    ]
+  },
+  {
+    id: "g3t2-d1", tema: 2, tipo: "Dato",
+    tag: "T2 · Dato · Estructurales",
+    front: "Estadísticas estructurales: operación de referencia y qué cambió en 2019.",
+    back: [
+      "Estadística Estructural de Empresas: sector industrial (INE)",
+      "Desde 2019 sustituye a la Encuesta Industrial de Empresas e integra industria, comercio y servicios en un mismo marco",
+      "Variables: cifra de negocios, valor añadido, empleo, gastos de personal, compras e inversión, por CNAE, tamaño y CCAA",
+      "Retardo típico: 18-24 meses"
+    ]
+  },
+  {
+    id: "g3t2-d2", tema: 2, tipo: "Dato",
+    tag: "T2 · Dato · Estructurales",
+    front: "Enumera las demás operaciones estructurales relevantes para la industria (al menos seis).",
+    back: [
+      "Estadística de productos industriales (PRODCOM)",
+      "DIRCE: universo de empresas y locales; base de muestreo",
+      "Contabilidad Nacional Anual y Trimestral, Contabilidad Regional (SEC 2010) y Marco Input-Output",
+      "Encuesta sobre Innovación en las Empresas y Estadística de I+D; Encuesta de uso de TIC y comercio electrónico",
+      "Encuesta de Consumos Energéticos en la industria",
+      "Central de Balances del Banco de España; Estadística de Comercio Exterior; encuestas de coste laboral"
+    ]
+  },
+  {
+    id: "g3t2-d3", tema: 2, tipo: "Dato",
+    tag: "T2 · Dato · IPI",
+    front: "El IPI en detalle: qué mide, qué cubre, qué base y qué tamaño de muestra.",
+    back: [
+      "Índice de volumen mensual que aproxima la evolución del valor añadido de las ramas industriales",
+      "Cubre secciones B, C y D y la división 36 (captación y distribución de agua)",
+      "Base 2021 desde enero de 2024 (por el Reglamento UE 2019/2152)",
+      "Muestra: ~11.500 establecimientos y más de 1.100 productos representativos",
+      "Tres series: original, corregida de calendario, corregida de efectos estacionales y de calendario"
+    ]
+  },
+  {
+    id: "g3t2-d4", tema: 2, tipo: "Dato",
+    tag: "T2 · Dato · Coyunturales cuantitativos",
+    front: "Además del IPI, ¿qué indicadores coyunturales cuantitativos citas y qué mide cada uno?",
+    back: [
+      "IPRI: precios de venta a salida de fábrica, sin impuestos ni transporte; sirve como deflactor",
+      "Índice de Cifra de Negocios en la Industria: facturación a precios corrientes",
+      "Índice de Entrada de Pedidos: demanda, con desglose interior y exterior",
+      "Alta frecuencia: afiliación a la Seguridad Social, EPA, coste laboral, matriculaciones, demanda eléctrica y de gas, consumo de cemento, tráfico portuario"
+    ]
+  },
+  {
+    id: "g3t2-d5", tema: 2, tipo: "Dato",
+    tag: "T2 · Dato · ECI e ICI",
+    front: "La Encuesta de Coyuntura Industrial y el Indicador de Clima Industrial: organismo, periodicidad y composición exacta del ICI.",
+    back: [
+      "ECI: Ministerio de Industria y Turismo, mensual, armonizada con el programa de encuestas de la Comisión Europea (DG ECFIN)",
+      "ICI = media aritmética de tres saldos: cartera de pedidos + existencias de productos terminados (CON EL SIGNO CAMBIADO) + expectativas de producción",
+      "Es el indicador industrial más inmediato: disponible en los últimos días del propio mes y no se revisa",
+      "Cuestionario trimestral ampliado: grado de utilización de la capacidad productiva y factores limitativos de la inversión"
+    ]
+  },
+  {
+    id: "g3t2-d6", tema: 2, tipo: "Dato",
+    tag: "T2 · Dato · Indicadores de opinión",
+    front: "Otros indicadores cualitativos y su umbral o naturaleza.",
+    back: [
+      "Indicador de Confianza Empresarial (ICE), del INE",
+      "Economic Sentiment Indicator (ESI), de la Comisión Europea: combina industria, servicios, construcción, comercio minorista y consumidores",
+      "PMI manufacturero de S&P Global/HCOB: privado, umbral de 50 puntos entre expansión y contracción",
+      "Todos se expresan en saldos netos: % de respuestas positivas menos negativas"
+    ]
+  },
+  {
+    id: "g3t2-c4", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Series temporales",
+    front: "Componentes de una serie temporal y método de desestacionalización estándar.",
+    back: [
+      "Componentes: tendencia-ciclo, estacionalidad, efecto calendario y componente irregular",
+      "Efecto calendario: días laborables, Semana Santa, año bisiesto",
+      "Desestacionalización: TRAMO-SEATS (Gómez y Maravall, Banco de España), estándar en INE y Eurostat; alternativa X-13ARIMA-SEATS",
+      "Cautela: en el IPI español la serie original y la corregida pueden divergir varios puntos, sobre todo en marzo y abril"
+    ]
+  },
+  {
+    id: "g3t2-c5", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Ciclo",
+    front: "Clasificación de indicadores según su comportamiento cíclico, con ejemplos de cada grupo.",
+    back: [
+      "Adelantados: ICI, PMI, entrada de pedidos, cartera de pedidos",
+      "Coincidentes: IPI, afiliación, consumo eléctrico",
+      "Retrasados: empleo neto, precios, inversión",
+      "Complementos: índices de difusión (qué proporción de ramas crece) y reloj del ciclo de Eurostat",
+      "Herramientas modernas: nowcasting con modelos de factores dinámicos y MIDAS"
+    ]
+  },
+  {
+    id: "g3t2-c6", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Leontief",
+    front: "Formaliza el modelo input-output: ecuación, qué es A y qué es la inversa de Leontief.",
+    back: [
+      "Modelo abierto de Leontief: x = Ax + d → x = (I − A)⁻¹ d",
+      "A = matriz de coeficientes técnicos: input del sector i por unidad de producción del sector j",
+      "(I − A)⁻¹ = inversa de Leontief: recoge efectos directos e indirectos",
+      "De ahí se derivan multiplicadores de producción, empleo, renta y, con extensiones ambientales, de emisiones",
+      "Soporte estadístico: tablas de origen y destino + tablas simétricas (SEC 2010)"
+    ]
+  },
+  {
+    id: "g3t2-c7", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Encadenamientos",
+    front: "Encadenamientos e índices de Rasmussen: definiciones y tipología de sectores.",
+    back: [
+      "Hacia atrás (backward, arrastre): qué compra el sector a los demás",
+      "Hacia adelante (forward, empuje): a qué sectores suministra",
+      "Normalizados → índices de Rasmussen",
+      "Tipología: sectores clave (ambos >1) · impulsores o de base (forward alto) · estratégicos o de arrastre (backward alto) · independientes"
+    ]
+  },
+  {
+    id: "g3t2-d7", tema: 2, tipo: "Dato",
+    tag: "T2 · Dato · Intersectorialidad España",
+    front: "Resultado del análisis intersectorial aplicado a la industria española: ¿qué puedes afirmar?",
+    back: [
+      "La manufactura tiene multiplicadores de producción y empleo por encima de la media y muy por encima de la mayoría de los servicios",
+      "Sectores clave: metalurgia y productos metálicos, química, papel, energía eléctrica",
+      "Fuerte arrastre hacia atrás: material de transporte y agroalimentario (encadenamiento con el sector primario)",
+      "Lectura: con ~11-12% del VAB, la contribución efectiva es mayor al incorporar efectos indirectos e inducidos — fundamento técnico del efecto multiplicador"
+    ]
+  },
+  {
+    id: "g3t2-c8", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Limitaciones I-O",
+    front: "Limitaciones del análisis input-output y alternativa metodológica.",
+    back: [
+      "Coeficientes técnicos fijos: tecnología constante",
+      "Rendimientos constantes a escala",
+      "Ausencia de restricciones de oferta y de precios relativos",
+      "Retardo considerable en la publicación de las tablas",
+      "Alternativa para superarlas: modelos de equilibrio general computable"
+    ]
+  },
+  {
+    id: "g3t2-c9", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Por qué TiVA",
+    front: "¿Qué problema resuelve el comercio en valor añadido y cómo se construye?",
+    back: [
+      "Problema: el comercio bruto contabiliza varias veces el mismo valor cuando un bien cruza fronteras en distintas fases; con la fragmentación productiva el «made in» pierde sentido → «made in the world»",
+      "Construcción: tablas input-output interpaís (base ICIO de la OCDE) + matrices de comercio bilateral → base TiVA OCDE-OMC",
+      "Bases alternativas: WIOD, EORA, ADB-MRIO y FIGARO (Eurostat)",
+      "En España: el INE publica un Panel de Indicadores de Comercio Internacional de Valor Añadido como estadística experimental, coherente con la Contabilidad Nacional"
+    ]
+  },
+  {
+    id: "g3t2-c10", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Indicadores TiVA",
+    front: "Principales indicadores que se extraen de TiVA.",
+    back: [
+      "Valor añadido doméstico incorporado en las exportaciones",
+      "Valor añadido extranjero contenido en las exportaciones",
+      "Participación hacia atrás: contenido importado / exportaciones brutas",
+      "Participación hacia adelante: VA nacional incorporado en exportaciones de terceros países",
+      "Posición o distancia a la demanda final; balanzas bilaterales en valor añadido; empleo y emisiones incorporados"
+    ]
+  },
+  {
+    id: "g3t2-d8", tema: 2, tipo: "Dato",
+    tag: "T2 · Dato · España en las CGV",
+    front: "Situación de España en las cadenas globales de valor: tres afirmaciones con cifra.",
+    back: [
+      "Participación hacia atrás elevada: del orden de una cuarta parte del valor exportado es contenido importado; bastante más en automoción → industria con fuerte componente ensamblador",
+      "Participación hacia adelante creciente desde 2007 → indicio de mejora de posición (upgrading)",
+      "Contenido de servicios: en torno al 55-60% del valor añadido exportado, frente a ~1/3 del comercio bruto → expresión estadística de la servitización",
+      "(Si te preguntan, da la horquilla, no un número exacto: varía según edición y año)"
+    ]
+  },
+  {
+    id: "g3t2-c11", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Implicaciones CGV",
+    front: "Implicaciones de política industrial del enfoque de cadenas de valor, y qué es la curva de la sonrisa.",
+    back: [
+      "Los saldos bilaterales cambian al medirse en valor añadido: relativiza los desequilibrios aparentes",
+      "Un arancel sobre un bien final penaliza también a los proveedores de intermedios aguas arriba",
+      "Dependencias críticas y autonomía estratégica abierta: semiconductores, materias primas fundamentales, principios activos",
+      "Nearshoring y friend-shoring; justifica el PERTE Chip y el PERTE VEC",
+      "Curva de la sonrisa: el valor se concentra en I+D/diseño y en marca/distribución/postventa; la manufactura pura captura la porción menor → hay que ascender en la cadena"
+    ]
+  },
+  {
+    id: "g3t2-n6", tema: 2, tipo: "Norma",
+    tag: "T2 · Norma · Energía",
+    front: "Marco normativo y sistema de recogida de las estadísticas energéticas.",
+    back: [
+      "Reglamento (CE) 1099/2008 relativo a las estadísticas sobre energía, con sus modificaciones: fija productos, definiciones y periodicidad",
+      "Recogida mediante los cuestionarios anuales conjuntos de la AIE, Eurostat y la CEPE/UNECE",
+      "Manuales metodológicos comunes (Energy Statistics Manual)"
+    ]
+  },
+  {
+    id: "g3t2-c12", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Balance energético",
+    front: "Estructura del balance energético: los tres bloques y la ecuación de la oferta.",
+    back: [
+      "Bloque 1 — Oferta: producción interior de energía primaria + importaciones − exportaciones ± variación de existencias − bunkers = energía disponible bruta",
+      "Bloque 2 — Transformación: refino, generación eléctrica, coquerías; pérdidas y consumos propios",
+      "Bloque 3 — Consumo final: energético (industria, transporte, residencial, servicios, agricultura) y no energético (uso como materia prima petroquímica)",
+      "Cuestiones de unidades: tep/ktep y GWh; poder calorífico superior e inferior; criterio de contabilización de nuclear y renovables"
+    ]
+  },
+  {
+    id: "g3t2-d9", tema: 2, tipo: "Dato",
+    tag: "T2 · Dato · Fuentes energéticas",
+    front: "Fuentes de estadística energética en España y en el ámbito internacional.",
+    back: [
+      "Nacionales: MITECO y Secretaría de Estado de Energía (balances, «La Energía en España»), CORES (productos petrolíferos y existencias mínimas), Enagás, Red Eléctrica, CNMC, IDAE, INE (Encuesta de Consumos Energéticos y cuentas ambientales)",
+      "Internacionales: Eurostat, Agencia Internacional de la Energía, IRENA, EIA, Energy Institute (antes BP)"
+    ]
+  },
+  {
+    id: "g3t2-d10", tema: 2, tipo: "Dato",
+    tag: "T2 · Dato · Indicadores energéticos",
+    front: "Indicadores derivados del balance energético, con la cifra de dependencia de España.",
+    back: [
+      "Dependencia energética = importaciones netas / energía disponible bruta → España ~68-70%, frente a una media UE-27 próxima al 60%, con tendencia descendente por el despliegue renovable",
+      "Intensidad energética primaria y final (consumo por unidad de PIB)",
+      "Grado de autoabastecimiento; cuota renovable sobre consumo final bruto; intensidad de carbono; índice de cobertura de la demanda eléctrica",
+      "Nexo con industria: cruzar la Encuesta de Consumos Energéticos con la CNAE identifica ramas electrointensivas (base del estatuto del consumidor electrointensivo y de las compensaciones por costes indirectos de CO₂)"
+    ]
+  },
+  {
+    id: "g3t2-c13", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Indicador sintético",
+    front: "¿Qué es un indicador sintético y cuál es el manual de referencia?",
+    back: [
+      "Agrega en una única cifra varios indicadores simples para representar un fenómeno multidimensional no observable directamente: competitividad, innovación, digitalización, transición energética, clima empresarial",
+      "Manual de referencia: OCDE y Centro Común de Investigación (JRC), «Handbook on Constructing Composite Indicators» — diez pasos"
+    ]
+  },
+  {
+    id: "g3t2-c14", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Metodología sintéticos",
+    front: "Los pasos críticos de construcción de un indicador sintético: normalización, ponderación y agregación.",
+    back: [
+      "Previos: marco teórico, selección de indicadores, imputación de datos faltantes, análisis multivariante (correlaciones, componentes principales)",
+      "Normalización: mínimo-máximo, puntuaciones z, distancia a un país de referencia, ordinal",
+      "Ponderación: pesos iguales; juicio experto (AHP, asignación presupuestaria); estadística (PCA, análisis factorial, DEA / benefit of the doubt)",
+      "Agregación: aritmética (plenamente compensatoria) vs. geométrica (penaliza desequilibrios) vs. no compensatoria",
+      "Cierre: análisis de sensibilidad y robustez, descomposición en subíndices y visualización"
+    ]
+  },
+  {
+    id: "g3t2-d11", tema: 2, tipo: "Dato",
+    tag: "T2 · Dato · Ejemplos sintéticos",
+    front: "Ejemplos de indicadores sintéticos en industria y en energía.",
+    back: [
+      "Industria: ICI (3 saldos); Economic Sentiment Indicator; PMI (media ponderada de 5 subíndices: nuevos pedidos, producción, empleo, plazos de entrega y existencias de compras)",
+      "Innovación: Cuadro Europeo de Indicadores de la Innovación y su versión regional — España, innovador moderado; índice CIP de ONUDI; índice de complejidad económica (Hausmann-Hidalgo)",
+      "Energía: ODEX (ODYSSEE-MURE), Energy Transition Index del WEF, cuadro de indicadores del PNIEC, ODS 7",
+      "Digital: marco de la Década Digital (sucesor del DESI)"
+    ]
+  },
+  {
+    id: "g3t2-c15", tema: 2, tipo: "Concepto",
+    tag: "T2 · Concepto · Riesgos sintéticos",
+    front: "Ventajas y riesgos de los indicadores sintéticos, y regla práctica.",
+    back: [
+      "Ventajas: sintetizan, comunican, permiten comparar y ordenar, facilitan el seguimiento de objetivos",
+      "Riesgos: arbitrariedad de la ponderación, compensación indebida entre dimensiones, mensajes simplistas, sensibilidad al método",
+      "Regla práctica: publicar siempre el detalle de los subíndices junto al agregado",
+      "Uso institucional: los 5 vectores de la Nueva Política Industrial 2030 solo son gobernables si se traducen en un cuadro de indicadores"
+    ]
+  },
+
+  /* ==================== ENLACES ENTRE TEMAS ==================== */
+  {
+    id: "x-enlace-1", tema: 0, tipo: "Enlace",
+    tag: "Transversal · Enlace T1 ↔ T2",
+    front: "Si expones el Tema 1, ¿qué frase del Tema 2 te da un punto extra? ¿Y al revés?",
+    back: [
+      "En el T1: «las cifras que acabo de dar proceden de la Estadística Estructural de Empresas y de la Contabilidad Nacional; el análisis input-output muestra que el arrastre de la industria es superior a su peso directo»",
+      "En el T2: «el diagnóstico del Tema 1 —11-12% del VAB, 84% de las exportaciones de bienes— solo es interpretable con estas fuentes»",
+      "Enlace común hacia Grupo V: la evaluación de la Nueva Política Industrial 2030 exige indicadores bien construidos"
+    ]
+  },
+  {
+    id: "x-enlace-2", tema: 0, tipo: "Enlace",
+    tag: "Transversal · Riesgos de examen",
+    front: "Tres confusiones típicas que el Tribunal detecta al instante. ¿Cuáles son?",
+    back: [
+      "Mezclar las tres definiciones de industria (manufactura / sin construcción / con construcción) sin decir cuál usas",
+      "Mezclar las brechas de productividad: −5,4% frente a la UE-27 NO es lo mismo que −29% frente a Alemania",
+      "Confundir encadenamiento hacia atrás con hacia adelante, o decir «participación en cadenas de valor» sin especificar cuál",
+      "Bonus: dar tasas del IPI sin decir si son de la serie original o de la corregida de calendario"
+    ]
+  },
+  {
+    id: "x-enlace-3", tema: 0, tipo: "Enlace",
+    tag: "Transversal · Gestión del tiempo",
+    front: "Reglas de la convocatoria para el tercer ejercicio: ¿cuánto tiempo tienes y cómo puntúa?",
+    back: [
+      "20 minutos para elaborar el índice, sin consultar material; ese índice sí puede usarse durante la exposición",
+      "Máximo 1 hora para los tres temas → ~18-20 min por tema",
+      "Un tema de cada grupo (III, IV y V), elegido entre dos extraídos al azar de cada grupo",
+      "0-30 puntos, 0-10 por tema; mínimo 15 puntos y no sacar cero en ningún tema",
+      "Después, hasta 10 minutos de preguntas del Tribunal"
+    ]
+  }
+];
+
+const TIPOS = ["Estructura", "Dato", "Norma", "Concepto", "Enlace"];
+const STORAGE_KEY = "leitner-progreso-v2";
+const LEGACY_KEY = "leitner-progreso";
+const INTERVALS_DAYS = [0, 1, 3, 7, 14];
+const MAX_BOX = 5;
+
+let progress = {};
+let queue = [];
+let currentIndex = 0;
+let flipped = false;
+let studyAllMode = false;
+let filterTema = "todos";
+let filterTipo = "todos";
+
+const app = document.getElementById("app");
+const statsBar = document.getElementById("statsBar");
+const resetRow = document.getElementById("resetRow");
+const temaFilters = document.getElementById("temaFilters");
+const tipoFilters = document.getElementById("tipoFilters");
+
+function daysFromNow(days){
+  const d = new Date();
+  d.setDate(d.getDate() + days);
+  return d.toISOString();
+}
+
+function isDue(cardId){
+  const p = progress[cardId];
+  if(!p) return true;
+  return new Date(p.nextDue).getTime() <= Date.now();
+}
+
+function boxOf(cardId){
+  return progress[cardId] ? progress[cardId].box : 0;
+}
+
+function inFilter(c){
+  const okTema = filterTema === "todos" || String(c.tema) === filterTema || c.tema === 0 && filterTema === "0";
+  const okTipo = filterTipo === "todos" || c.tipo === filterTipo;
+  return okTema && okTipo;
+}
+
+function filteredCards(){
+  return CARDS.filter(inFilter);
+}
+
+async function loadProgress(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    progress = raw ? JSON.parse(raw) : {};
+  }catch(e){ progress = {}; }
+  if(Object.keys(progress).length===0){
+    try{
+      const old=localStorage.getItem(LEGACY_KEY);
+      if(old){
+        progress=JSON.parse(old);
+        await saveProgress();
+      }
+    }catch(e){}
+  }
+}
+
+async function saveProgress(){
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+  }catch(e){
+    console.error("No se pudo guardar el progreso",e);
+    if(typeof flash === "function"){
+      flash("Este navegador no está guardando el progreso (¿modo incógnito?). Exporta antes de cerrar.", true);
+    }
+  }
+}
+
+function renderFilters(){
+  const temas = [
+    { v:"todos", l:"Todos" },
+    { v:"1", l:"Tema 1" },
+    { v:"2", l:"Tema 2" },
+    { v:"0", l:"Transversal" }
+  ];
+  temaFilters.innerHTML = '<span class="filter-label">Tema</span>' + temas.map(t =>
+    `<button class="chip ${filterTema===t.v?'active':''}" data-tema="${t.v}">${t.l}</button>`
+  ).join("");
+
+  tipoFilters.innerHTML = '<span class="filter-label">Tipo</span>' +
+    `<button class="chip ${filterTipo==='todos'?'active':''}" data-tipo="todos">Todos</button>` +
+    TIPOS.map(t => `<button class="chip ${filterTipo===t?'active':''}" data-tipo="${t}">${t}</button>`).join("");
+
+  temaFilters.querySelectorAll("[data-tema]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterTema = btn.dataset.tema;
+      refresh();
+    });
+  });
+  tipoFilters.querySelectorAll("[data-tipo]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterTipo = btn.dataset.tipo;
+      refresh();
+    });
+  });
+}
+
+function buildQueue(){
+  const base = filteredCards();
+  const source = studyAllMode ? base : base.filter(c => isDue(c.id));
+  queue = [...source].sort(() => Math.random() - 0.5);
+  currentIndex = 0;
+}
+
+function renderStats(){
+  const set = filteredCards();
+  const boxCounts = [0,0,0,0,0,0];
+  set.forEach(c => { boxCounts[boxOf(c.id)]++; });
+  const dueCount = set.filter(c => isDue(c.id)).length;
+
+  statsBar.innerHTML = `
+    <span class="stat-pill"><b>${set.length}</b> fichas en el mazo</span>
+    <span class="stat-pill"><b>${dueCount}</b> pendientes hoy</span>
+    <span class="stat-pill">Caja 1: <b>${boxCounts[0]+boxCounts[1]}</b></span>
+    <span class="stat-pill">Caja 2: <b>${boxCounts[2]}</b></span>
+    <span class="stat-pill">Caja 3: <b>${boxCounts[3]}</b></span>
+    <span class="stat-pill">Caja 4: <b>${boxCounts[4]}</b></span>
+    <span class="stat-pill">Dominadas: <b>${boxCounts[5]}</b></span>
+  `;
+}
+
+function renderFooter(){
+  resetRow.innerHTML = `
+    <button class="link-btn" id="toggleAllBtn">${studyAllMode ? "Volver a modo pendientes" : "Repasar todas las fichas (ignorar fechas)"}</button>
+    <span class="footer-sep">·</span>
+    <button class="link-btn" id="exportBtn">Exportar progreso</button>
+    <button class="link-btn" id="importBtn">Importar progreso</button>
+    <span class="footer-sep">·</span>
+    <button class="link-btn" id="resetBtn">Reiniciar progreso</button>
+    <input type="file" id="importInput" accept="application/json,.json" style="display:none">
+  `;
+  document.getElementById("toggleAllBtn").addEventListener("click", () => {
+    studyAllMode = !studyAllMode;
+    buildQueue();
+    renderCard();
+  });
+  document.getElementById("exportBtn").addEventListener("click", exportProgress);
+  const importInput = document.getElementById("importInput");
+  document.getElementById("importBtn").addEventListener("click", () => importInput.click());
+  importInput.addEventListener("change", () => {
+    const file = importInput.files && importInput.files[0];
+    if(file) importProgress(file);
+    importInput.value = "";
+  });
+  document.getElementById("resetBtn").addEventListener("click", async () => {
+    if(confirm("¿Seguro que quieres borrar todo el progreso de repaso?")){
+      progress = {};
+      await saveProgress();
+      studyAllMode = false;
+      refresh();
+      flash("Progreso borrado. Todas las fichas vuelven a la caja 1.");
+    }
+  });
+}
+
+/* ---------- Aviso emergente ---------- */
+let toastTimer = null;
+
+function flash(msg, isError){
+  let el = document.getElementById("toast");
+  if(!el){
+    el = document.createElement("div");
+    el.id = "toast";
+    document.body.appendChild(el);
+  }
+  el.textContent = msg;
+  el.className = "toast show" + (isError ? " toast-error" : "");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { el.className = "toast" + (isError ? " toast-error" : ""); }, 3600);
+}
+
+/* ---------- Exportar / importar progreso ---------- */
+function exportProgress(){
+  const n = Object.keys(progress).length;
+  if(n === 0){
+    flash("Todavía no hay progreso que exportar.", true);
+    return;
+  }
+  const payload = {
+    app: "fichas-ingenieros-industriales-estado",
+    version: 2,
+    exportadoEl: new Date().toISOString(),
+    fichasEnElMazo: CARDS.length,
+    progress: progress
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "progreso-fichas-" + new Date().toISOString().slice(0, 10) + ".json";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  flash("Progreso exportado: " + n + " fichas.");
+}
+
+function importProgress(file){
+  const reader = new FileReader();
+
+  reader.onerror = () => flash("No se pudo leer el fichero.", true);
+
+  reader.onload = async () => {
+    let data;
+    try{
+      data = JSON.parse(reader.result);
+    }catch(e){
+      flash("El fichero no es un JSON válido.", true);
+      return;
+    }
+
+    const incoming = data && data.progress ? data.progress : data;
+    if(!incoming || typeof incoming !== "object" || Array.isArray(incoming)){
+      flash("El fichero no contiene un progreso reconocible.", true);
+      return;
+    }
+
+    const validIds = new Set(CARDS.map(c => c.id));
+    let nuevas = 0, actualizadas = 0, ignoradas = 0;
+
+    Object.keys(incoming).forEach(id => {
+      const p = incoming[id];
+      const valido = p && typeof p.box === "number" && p.box >= 0 && p.box <= MAX_BOX &&
+                     p.nextDue && !isNaN(new Date(p.nextDue).getTime());
+      if(!validIds.has(id) || !valido){ ignoradas++; return; }
+
+      const actual = progress[id];
+      if(!actual){
+        progress[id] = { box: p.box, nextDue: p.nextDue };
+        nuevas++;
+        return;
+      }
+      // Se conserva siempre el estado más avanzado: caja mayor y, a igual caja, la revisión más lejana.
+      if(p.box > actual.box || (p.box === actual.box && new Date(p.nextDue) > new Date(actual.nextDue))){
+        progress[id] = { box: p.box, nextDue: p.nextDue };
+        actualizadas++;
+      }
+    });
+
+    if(nuevas === 0 && actualizadas === 0){
+      flash("Nada que importar: este dispositivo ya estaba igual o más avanzado.");
+      return;
+    }
+
+    await saveProgress();
+    refresh();
+    flash("Importado: " + nuevas + " fichas nuevas, " + actualizadas + " actualizadas" +
+          (ignoradas ? ", " + ignoradas + " ignoradas" : "") + ".");
+  };
+
+  reader.readAsText(file);
+}
+
+function renderCard(){
+  renderFooter();
+  if(currentIndex >= queue.length){
+    renderEmptyState();
+    return;
+  }
+  const card = queue[currentIndex];
+  flipped = false;
+
+  const tipoClass = card.tipo === "Dato" ? "tipo-dato" : (card.tipo === "Norma" ? "tipo-norma" : "");
+
+  app.innerHTML = `
+    <div class="progress-row">
+      <span>Ficha ${currentIndex + 1} / ${queue.length}</span>
+      <span>Caja actual: ${boxOf(card.id) || "nueva"}</span>
+    </div>
+    <div class="card ${tipoClass}" id="cardEl">
+      <div class="stamp" id="stampEl"></div>
+      <span class="card-tag">${card.tag}</span>
+      <div class="card-face" id="cardFace">
+        <p class="question" id="questionText"></p>
+        <p class="hint">Piensa tu respuesta en voz alta antes de girar la ficha.</p>
+      </div>
+      <button class="btn btn-flip" id="flipBtn">Girar ficha</button>
+    </div>
+    <p class="kbd-note">Espacio: girar · ←: no me acuerdo · →: lo sé</p>
+  `;
+
+  document.getElementById("questionText").textContent = card.front;
+
+  const cardEl = document.getElementById("cardEl");
+  const flipBtn = document.getElementById("flipBtn");
+
+  const doFlip = () => {
+    if(flipped) return;
+    flipped = true;
+    showBack(card);
+  };
+
+  flipBtn.addEventListener("click", (e) => { e.stopPropagation(); doFlip(); });
+  cardEl.addEventListener("click", doFlip);
+}
+
+function showBack(card){
+  const cardFace = document.getElementById("cardFace");
+  const listItems = card.back.map(item => `<li>${item}</li>`).join("");
+  cardFace.innerHTML = `<ul class="answer-list">${listItems}</ul>`;
+
+  const flipBtn = document.getElementById("flipBtn");
+  flipBtn.outerHTML = `
+    <div class="actions">
+      <button class="btn btn-danger" id="failBtn">No me acuerdo</button>
+      <button class="btn btn-success" id="passBtn">Lo sé</button>
+    </div>
+  `;
+
+  document.getElementById("failBtn").addEventListener("click", (e) => {
+    e.stopPropagation();
+    answer(card, false);
+  });
+  document.getElementById("passBtn").addEventListener("click", (e) => {
+    e.stopPropagation();
+    answer(card, true);
+  });
+}
+
+let answering = false;
+
+async function answer(card, correct){
+  if(answering) return;
+  answering = true;
+
+  const stampEl = document.getElementById("stampEl");
+  if(stampEl){
+    stampEl.textContent = correct ? "Lo sé" : "Repasar";
+    stampEl.className = "stamp show " + (correct ? "stamp-success" : "stamp-danger");
+  }
+
+  const currentBox = boxOf(card.id);
+  const newBox = correct ? Math.min(currentBox + 1, MAX_BOX) : 1;
+  const interval = INTERVALS_DAYS[Math.max(newBox - 1, 0)];
+
+  progress[card.id] = { box: newBox, nextDue: daysFromNow(interval) };
+  await saveProgress();
+
+  setTimeout(() => {
+    currentIndex++;
+    renderStats();
+    renderCard();
+    answering = false;
+  }, 500);
+}
+
+function renderEmptyState(){
+  const allDone = !studyAllMode;
+  app.innerHTML = `
+    <div class="empty-state">
+      <h2>${allDone ? "Repaso de hoy completado" : "Fin de la ronda"}</h2>
+      <p>${allDone ? "No quedan fichas pendientes en esta selección. Cambia de filtro, vuelve mañana o repasa todas otra vez." : "Has repasado el mazo completo con estos filtros."}</p>
+      <button class="link-btn" id="againBtn">Repasar todas las fichas otra vez</button>
+    </div>
+  `;
+  document.getElementById("againBtn").addEventListener("click", () => {
+    studyAllMode = true;
+    buildQueue();
+    renderCard();
+  });
+}
+
+document.addEventListener("keydown", (e) => {
+  if(currentIndex >= queue.length) return;
+  const card = queue[currentIndex];
+  if(!card) return;
+
+  if((e.key === " " || e.key === "Enter") && !flipped){
+    e.preventDefault();
+    flipped = true;
+    showBack(card);
+  } else if(flipped && (e.key === "ArrowLeft" || e.key === "1")){
+    e.preventDefault();
+    answer(card, false);
+  } else if(flipped && (e.key === "ArrowRight" || e.key === "2")){
+    e.preventDefault();
+    answer(card, true);
+  }
+});
+
+function refresh(){
+  renderFilters();
+  renderStats();
+  buildQueue();
+  renderCard();
+}
+
+async function init(){
+  await loadProgress();
+  refresh();
+}
+
+init();
+</script>
+</body>
+</html>
