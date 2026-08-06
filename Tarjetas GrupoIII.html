@@ -1745,6 +1745,799 @@ const CARDS = [
     ]
   },
 
+  /* ==================== GRUPO III · TEMA 6 ==================== */
+  {
+    id: "g3t6-skeleton", tema: 6, tipo: "Estructura",
+    tag: "T6 · Esqueleto completo",
+    front: "El sector energético en el contexto de la economía española.\n\nReconstruye el índice completo: lista los epígrafes en orden con su tiempo aproximado.",
+    back: [
+      "0. Apertura (1 min)",
+      "1. El sistema energético español (2 min)",
+      "2. Energía primaria: fuentes, abastecimiento, dependencia y diversificación (2,5 min)",
+      "3. Energía final: usos y consumidores (2 min)",
+      "4. Seguridad de suministro: cobertura, interconexiones y almacenamiento (2,5 min)",
+      "5. Energía, medio ambiente y sostenibilidad (2,5 min)",
+      "6. Mercados energéticos y mercados derivados (2,5 min)",
+      "7. Estructura empresarial (1,5 min)",
+      "8. Precios energéticos (2 min)",
+      "9. Evolución, situación actual y tendencias (2 min)",
+      "10. Cierre (1 min)"
+    ]
+  },
+  {
+    id: "g3t6-e1", tema: 6, tipo: "Estructura",
+    tag: "T6 · Epígrafes 0-3",
+    front: "Apertura, sistema energético, energía primaria y final — ¿qué tienes que decir?",
+    back: [
+      "Apertura: la energía es un input universal; tesis — debilidad estructural (dependencia, aislamiento) frente a ventaja emergente (recurso renovable)",
+      "Aviso: el detalle sectorial va en los Temas 7 a 12; la regulación, en el Grupo V",
+      "Sistema: peso económico, rasgos estructurales y mapa institucional (MITECO, CNMC, REE, Enagás, OMIE, CORES, IDAE)",
+      "Primaria: consumo, estructura del mix, producción interior, dependencia y diversificación",
+      "Final: consumo, usos energéticos y no energéticos, sectores consumidores y electrificación"
+    ]
+  },
+  {
+    id: "g3t6-e2", tema: 6, tipo: "Estructura",
+    tag: "T6 · Epígrafes 4-6",
+    front: "Seguridad de suministro, sostenibilidad y mercados — ¿qué cubres?",
+    back: [
+      "Seguridad: tres dimensiones, índice de cobertura, interconexiones, almacenamiento y existencias mínimas",
+      "Sostenibilidad: emisiones, desacoplamiento, intensidad energética, instrumentos y otros impactos ambientales",
+      "Mercados: OMIE y servicios de ajuste, MIBGAS y TTF, Brent y WTI, derivados en OMIP, PPA y contratos por diferencias, mercado minorista"
+    ]
+  },
+  {
+    id: "g3t6-e3", tema: 6, tipo: "Estructura",
+    tag: "T6 · Epígrafes 7-10",
+    front: "Estructura empresarial, precios, evolución y cierre — ¿qué cubres?",
+    back: [
+      "Estructura: unbundling, concentración, desconcentración de la generación por la entrada renovable, figuras emergentes",
+      "Precios: estructura del precio final, datos de mercado mayorista, volatilidad, problema industrial y pobreza energética",
+      "Evolución: autarquía → liberalización → primas y déficit de tarifa → reforma de 2013 → transición energética",
+      "Cierre: dos vías de reducción de vulnerabilidad, tres debilidades estructurales y la oportunidad industrial"
+    ]
+  },
+  {
+    id: "g3t6-d1", tema: 6, tipo: "Dato",
+    tag: "T6 · Dato · Energía primaria",
+    front: "Consumo y estructura de la energía primaria en España (Balance Energético 2024).",
+    back: [
+      "Consumo de energía primaria: ~117.700 ktep, +2,1% respecto a 2023 (con el PIB creciendo un 3,5%)",
+      "Productos petrolíferos: 46,5% (subiendo desde el 45,0% de 2023, por el transporte)",
+      "Renovables: 19,1% del mix primario",
+      "Orden completo: petrolíferos → gas natural → renovables → nuclear → carbón (residual, −11,6%)"
+    ]
+  },
+  {
+    id: "g3t6-d2", tema: 6, tipo: "Dato",
+    tag: "T6 · Dato · Dependencia",
+    front: "Producción interior y dependencia energética española.",
+    back: [
+      "Producción interior: ~37.177 ktep, +2,2%, con el 60,1% de origen renovable → la energía autóctona española es ya mayoritariamente renovable",
+      "Dependencia energética 2024: 68,4% (importaciones netas / energía disponible bruta)",
+      "Media UE-27: en torno al 60%",
+      "Objetivo PNIEC: reducirla al 50% en 2030",
+      "Concepto a distinguir: dependencia (cuánto importas) frente a vulnerabilidad (cuánto te expone) — lección de 2022"
+    ]
+  },
+  {
+    id: "g3t6-d3", tema: 6, tipo: "Dato",
+    tag: "T6 · Dato · Energía final",
+    front: "Consumo de energía final: cifra, desglose y sectores consumidores.",
+    back: [
+      "88.860 ktep en 2024, +3,6%",
+      "De ellos, 83.553 ktep de usos energéticos y 5.307 ktep de usos no energéticos (materia prima petroquímica)",
+      "La diferencia entre primaria (117.700) y final (88.860) son las pérdidas de transformación, transporte y consumos propios",
+      "Sectores: transporte el primero (~40% del final energético), después industria, residencial, servicios y agricultura",
+      "Electrificación: la electricidad ronda una cuarta parte del consumo final; el PNIEC apunta al 35% en 2030"
+    ]
+  },
+  {
+    id: "g3t6-c1", tema: 6, tipo: "Concepto",
+    tag: "T6 · Concepto · Seguridad de suministro",
+    front: "Seguridad de suministro: dimensiones, índice de cobertura y situación española.",
+    back: [
+      "Tres dimensiones: adecuación a largo plazo, seguridad de operación a corto plazo y resiliencia frente a crisis",
+      "Índice de cobertura: potencia disponible / punta de demanda prevista. Con alta penetración renovable lo relevante es la potencia FIRME, no la instalada",
+      "Interconexión con Francia muy por debajo del objetivo europeo del 15% → «isla energética». Proyectos: Golfo de Vizcaya y pasos pirenaicos",
+      "Almacenamiento (2025): 3.427 MW — 3.331 MW de bombeo y solo 96 MW de baterías, el 2,4% de la potencia instalada. Objetivo PNIEC: 22,5 GW",
+      "Hidrocarburos: existencias mínimas de seguridad de 92 días controladas por CORES",
+      "Fortaleza: una de las mayores capacidades de regasificación de Europa — amortiguador continental en 2022"
+    ]
+  },
+  {
+    id: "g3t6-d4", tema: 6, tipo: "Dato",
+    tag: "T6 · Dato · Emisiones y desacoplamiento",
+    front: "Energía, emisiones e intensidad energética: los datos y el concepto clave.",
+    back: [
+      "Emisiones del sector eléctrico: −16,8% en 2024 y −75,7% acumulado desde 2007",
+      "Emisiones totales del país: ~−6,3% respecto a 1990 y ~−38,5% respecto a 2005",
+      "Generación eléctrica 2025: ~29,5 millones de toneladas de CO₂ equivalente",
+      "Desacoplamiento: en 2024 el PIB creció un 3,5% mientras la intensidad energética primaria bajaba en torno a un 1% — crecer consumiendo menos por unidad de producto",
+      "Matiz: la intensidad energética española es favorable en parte por su estructura de servicios, el mismo rasgo que en el Tema 1 se lee como debilidad"
+    ]
+  },
+  {
+    id: "g3t6-c2", tema: 6, tipo: "Concepto",
+    tag: "T6 · Concepto · Mercados energéticos",
+    front: "Mercados energéticos y derivados: quién opera qué y cuáles son las referencias de precio.",
+    back: [
+      "Electricidad: OMIE como operador del mercado (diario e intradiarios), casación marginalista; sobre él se superponen los servicios de ajuste, con peso creciente",
+      "Gas: MIBGAS como mercado organizado ibérico; TTF como referencia europea",
+      "Petróleo: mercado internacional no organizado — Brent y WTI",
+      "Derivados: OMIP para futuros eléctricos; función de cobertura de riesgo, no de entrega física (contango y backwardation)",
+      "Bilateral: PPA a largo plazo y contratos por diferencias bidireccionales impulsados por la reforma europea de 2024",
+      "Minorista: mercado libre y precio voluntario para el pequeño consumidor"
+    ]
+  },
+  {
+    id: "g3t6-c3", tema: 6, tipo: "Concepto",
+    tag: "T6 · Concepto · Estructura empresarial",
+    front: "Estructura empresarial del sector energético: principio ordenador y figuras emergentes.",
+    back: [
+      "Principio ordenador: unbundling o separación de actividades — redes reguladas (monopolio natural) frente a generación y comercialización liberalizadas",
+      "Alta concentración e intensidad de capital; REE y Enagás como gestores técnicos con carácter de transportista único",
+      "Cambio de la última década: la entrada masiva de nuevos actores renovables ha desconcentrado la generación, mientras la comercialización sigue concentrada",
+      "Figuras emergentes: agregador independiente, comunidad energética, titular de almacenamiento y prestador de servicios de recarga"
+    ]
+  },
+  {
+    id: "g3t6-d5", tema: 6, tipo: "Dato",
+    tag: "T6 · Dato · Precios energéticos",
+    front: "Precios energéticos: estructura del precio final y datos de mercado de 2025.",
+    back: [
+      "Estructura: coste de la energía + costes regulados (peajes de acceso y cargos) + impuestos (impuesto especial sobre la electricidad e IVA)",
+      "Mercado mayorista eléctrico 2025: media en el entorno de 65 €/MWh (≈63 €/MWh en 2024) — tercer año consecutivo por debajo de 100 €/MWh",
+      "MIBGAS: cierre de 2025 en el entorno de 28 €/MWh, muy lejos de los máximos de 2022",
+      "Problema industrial: el precio final del consumidor industrial español sigue por encima del de competidores como Francia por el peso de los costes regulados",
+      "Instrumentos: estatuto del consumidor electrointensivo, compensación de costes indirectos de CO₂ e interrumpibilidad; y bono social frente a la pobreza energética"
+    ]
+  },
+  {
+    id: "g3t6-c4", tema: 6, tipo: "Concepto",
+    tag: "T6 · Concepto · Evolución del sistema",
+    front: "Evolución histórica del sistema energético español en seis etapas.",
+    back: [
+      "Sistema autárquico e intervenido; Planes Energéticos Nacionales; desarrollo hidráulico y nuclear",
+      "Liberalización: Ley del Sector Eléctrico de 1997 y Ley de Hidrocarburos de 1998",
+      "Años 2000: despliegue renovable con primas y déficit de tarifa",
+      "2013: reforma de sostenibilidad económica del sistema",
+      "Desde 2018: transición energética, subastas sin primas, PNIEC",
+      "Actualidad: mix eléctrico mayoritariamente renovable, dependencia en descenso, demanda eléctrica al alza y debate sobre firmeza tras el incidente de abril de 2025"
+    ]
+  },
+
+  /* ==================== GRUPO III · TEMA 7 ==================== */
+  {
+    id: "g3t7-skeleton", tema: 7, tipo: "Estructura",
+    tag: "T7 · Esqueleto completo",
+    front: "El sector de las industrias extractivas.\n\nReconstruye el índice completo: lista los epígrafes en orden con su tiempo aproximado.",
+    back: [
+      "0. Apertura (1 min)",
+      "1. Delimitación, marco jurídico y magnitudes (2,5 min)",
+      "2. Productos energéticos (1,5 min)",
+      "3. Minerales metálicos (2 min)",
+      "4. Minerales industriales y rocas ornamentales (2 min)",
+      "5. Áridos y otros productos de cantera (1,5 min)",
+      "6. Minería: usos, tecnología y aspectos medioambientales (2,5 min)",
+      "7. Evolución histórica (2 min)",
+      "8. Minerales críticos para las transiciones y la defensa (3 min)",
+      "9. Análisis sectorial, perspectivas y cierre (2 min)"
+    ]
+  },
+  {
+    id: "g3t7-e1", tema: 7, tipo: "Estructura",
+    tag: "T7 · Epígrafes 0-5",
+    front: "Apertura, delimitación y subsectores — ¿qué tienes que decir?",
+    back: [
+      "Apertura: la minería es el primer eslabón de toda cadena industrial; tesis — tradición y potencial infrautilizado, frenado por tramitación y contestación social",
+      "Delimitación: sección B de la CNAE y, sobre todo, las cuatro secciones de la Ley de Minas",
+      "Magnitudes: valor, empleo, explotaciones, reparto por subsectores y por CCAA",
+      "Subsectores en orden: energéticos (carbón, uranio, hidrocarburos) → metálicos → industriales y ornamentales → áridos y productos de cantera"
+    ]
+  },
+  {
+    id: "g3t7-e2", tema: 7, tipo: "Estructura",
+    tag: "T7 · Epígrafes 6-9",
+    front: "Tecnología, historia, minerales críticos y cierre — ¿qué cubres?",
+    back: [
+      "Tecnología: etapas de la actividad, métodos de explotación, tratamiento, digitalización, impactos y control ambiental, seguridad minera",
+      "Historia: de Riotinto y Almadén a la Ley de Bases de 1868, el ciclo del carbón y la reapertura selectiva",
+      "Minerales críticos: concepto, Reglamento europeo con sus objetivos 2030, posición española y plan nacional",
+      "Cierre: fortalezas, debilidades y la ventana de oportunidad de la autonomía estratégica"
+    ]
+  },
+  {
+    id: "g3t7-n1", tema: 7, tipo: "Norma",
+    tag: "T7 · Norma · Ley de Minas",
+    front: "Ley de Minas: las cuatro secciones y los títulos mineros asociados.",
+    back: [
+      "Ley 22/1973, de Minas",
+      "Sección A: recursos de escaso valor y uso exclusivo en obra — áridos naturales",
+      "Sección B: aguas minerales y termales, estructuras subterráneas y acumulaciones de residuos",
+      "Sección C: resto de recursos mineros — el grueso de la minería metálica e industrial",
+      "Sección D (añadida en 1980): carbones, minerales radiactivos, recursos geotérmicos y rocas bituminosas",
+      "Títulos: autorización de aprovechamiento (sección A) frente a permiso de exploración → permiso de investigación → concesión de explotación (secciones C y D)"
+    ]
+  },
+  {
+    id: "g3t7-d1", tema: 7, tipo: "Dato",
+    tag: "T7 · Dato · Magnitudes del sector",
+    front: "Magnitudes de la minería española (Estadística Minera 2024).",
+    back: [
+      "Valor de la producción: 3.628 millones de euros, +1,6% interanual",
+      "Empleo: 30.234 empleos directos (89,5% masculino; el empleo femenino creció un 17,8%)",
+      "Explotaciones: 2.592 activas — caída del 38% desde las 4.227 de 2005, pero estabilizadas en torno a 2.600",
+      "Lectura: concentración y tecnificación, no declive productivo",
+      "Fuente: Estadística Minera de España, publicada ininterrumpidamente desde 1861"
+    ]
+  },
+  {
+    id: "g3t7-d2", tema: 7, tipo: "Dato",
+    tag: "T7 · Dato · Reparto por subsector y territorio",
+    front: "Reparto del valor de la producción minera por subsectores y por comunidades autónomas.",
+    back: [
+      "Productos de cantera 36% (y más de la mitad del empleo)",
+      "Minerales metálicos 27% · minerales industriales 25% · rocas ornamentales 12%",
+      "Andalucía lidera con el 33,9% del valor: 1.229 M€ y unos 7.925 empleos",
+      "Le siguen Castilla y León (12%), Cataluña (11,1%) y Galicia (8,7%)",
+      "Predominio de explotaciones pequeñas: la mayoría con menos de 10 trabajadores"
+    ]
+  },
+  {
+    id: "g3t7-d3", tema: 7, tipo: "Dato",
+    tag: "T7 · Dato · Posición internacional",
+    front: "Posición de España en minería dentro de la UE y en el mundo.",
+    back: [
+      "Único productor de la UE: sepiolita y estroncio",
+      "Primer productor de la UE: espato flúor y yeso",
+      "Segundo productor de la UE: cobre, mármol, magnesita y sales potásicas",
+      "Tercer productor de la UE: wolframio · cuarto: granito",
+      "Primer productor mundial: pizarra de techar (Galicia y León)",
+      "Gran distrito metalogenético: la Faja Pirítica Ibérica (Huelva y Sevilla), con sulfuros polimetálicos — cobre, zinc, plomo, plata y oro"
+    ]
+  },
+  {
+    id: "g3t7-c1", tema: 7, tipo: "Concepto",
+    tag: "T7 · Concepto · Áridos",
+    front: "Áridos y productos de cantera: rasgos económicos y consecuencia de política.",
+    back: [
+      "Mayor volumen físico, primer subsector en valor (36%) y mayor empleador (más de la mitad del empleo)",
+      "Bajo valor unitario y alto coste de transporte → mercado estrictamente local, con radio económico de 30-50 km",
+      "Por eso hay explotaciones en prácticamente todas las comunidades autónomas",
+      "Consecuencia: la ordenación del territorio y el urbanismo son la principal restricción, porque las canteras deben estar cerca de las ciudades",
+      "Vinculación cíclica total con la construcción; es el subsector más avanzado en áridos reciclados de residuos de construcción y demolición"
+    ]
+  },
+  {
+    id: "g3t7-c2", tema: 7, tipo: "Concepto",
+    tag: "T7 · Concepto · Tecnología minera",
+    front: "Etapas, métodos de explotación y tratamiento del mineral.",
+    back: [
+      "Etapas: prospección → exploración → investigación → diseño → explotación → tratamiento → cierre y restauración",
+      "Cielo abierto (corta, cantera, terrazas): mayor recuperación y menor coste unitario, mayor afección superficial",
+      "Subterránea: cámaras y pilares, hundimiento por subniveles, corte y relleno — más costosa, menos huella",
+      "Tratamiento: trituración y molienda, clasificación, concentración gravimétrica, magnética o por flotación, hidrometalurgia y pirometalurgia",
+      "Digitalización: perforación teledirigida, camiones autónomos, monitorización geotécnica, modelización 3D y gemelos digitales — la minería es hoy de los sectores más digitalizados"
+    ]
+  },
+  {
+    id: "g3t7-c3", tema: 7, tipo: "Concepto",
+    tag: "T7 · Concepto · Medio ambiente minero",
+    front: "Impactos ambientales de la minería e instrumentos de control.",
+    back: [
+      "Impactos: paisaje y suelo, drenaje ácido de mina en sulfuros, balsas de estériles (precedente de Aznalcóllar), aguas, polvo, ruido y vibraciones",
+      "Instrumentos: evaluación de impacto ambiental, autorización ambiental integrada cuando procede, plan de restauración obligatorio con garantía financiera, normativa de residuos de industrias extractivas",
+      "Idea a transmitir: la restauración no es un añadido, forma parte del proyecto minero desde el diseño",
+      "Seguridad: Reglamento General de Normas Básicas de Seguridad Minera e instrucciones técnicas complementarias; autoridades mineras autonómicas"
+    ]
+  },
+  {
+    id: "g3t7-n2", tema: 7, tipo: "Norma",
+    tag: "T7 · Norma · Materias primas fundamentales",
+    front: "Materias primas críticas: concepto, norma europea y objetivos cuantitativos para 2030.",
+    back: [
+      "Críticas: alta importancia económica + alto riesgo de suministro. Estratégicas: subconjunto clave para transición verde y digital, aeroespacial y defensa",
+      "Reglamento europeo de Materias Primas Fundamentales (2024)",
+      "Objetivos UE para 2030: ≥10% del consumo en extracción propia · ≥40% en transformación · ≥25% en reciclado",
+      "Y un límite: no más del 65% de dependencia de un único tercer país para cada materia estratégica",
+      "Novedad práctica más relevante: fija plazos máximos de tramitación para los proyectos estratégicos"
+    ]
+  },
+  {
+    id: "g3t7-d4", tema: 7, tipo: "Dato",
+    tag: "T7 · Dato · España y los minerales críticos",
+    front: "Posición española en materias primas fundamentales: cifras, proyectos y potencial.",
+    back: [
+      "Valor de la producción de materias primas fundamentales en 2024: unos 830 millones de euros",
+      "La Comisión Europea ha declarado siete proyectos estratégicos en España, dentro de una primera selección de 47 en toda la UE",
+      "Cubren toda la cadena: investigación, extracción, procesado, refinado, reciclado y desarrollo tecnológico",
+      "Potencial geológico: litio (Extremadura, Galicia), tierras raras (Castilla-La Mancha), wolframio (noroeste), cobre (Faja Pirítica), espato flúor",
+      "Instrumento nacional en tramitación: Primer Plan de Acción para la Gestión Sostenible de las Materias Primas Minerales 2026-2030",
+      "Clave conceptual: la dependencia europea es metalúrgica (transformación y refino), no geológica"
+    ]
+  },
+  {
+    id: "g3t7-c4", tema: 7, tipo: "Concepto",
+    tag: "T7 · Concepto · Historia minera",
+    front: "Evolución histórica de la minería española: los hitos que debes citar.",
+    back: [
+      "Riotinto y Almadén desde época romana; Almadén, mayor yacimiento mundial de mercurio, hoy Patrimonio de la Humanidad",
+      "Ley de Bases de 1868: apertura al capital extranjero; Riotinto, Linares y el hierro vizcaíno están en el origen de la siderurgia y la banca del norte",
+      "Siglo XX: nacionalización, protagonismo del carbón, creación del IGME; desde los ochenta, reconversión",
+      "Carbón: cierre de la minería no competitiva a finales de 2018, en cumplimiento de la Decisión europea sobre ayudas al cierre",
+      "Legado: Convenios de Transición Justa, Instituto para la Transición Justa y Fondo de Transición Justa",
+      "Hidrocarburos: producción marginal; la Ley 7/2021 prohibió nuevas autorizaciones de exploración y la fracturación hidráulica"
+    ]
+  },
+
+  /* ==================== GRUPO III · TEMA 8 ==================== */
+  {
+    id: "g3t8-skeleton", tema: 8, tipo: "Estructura",
+    tag: "T8 · Esqueleto completo",
+    front: "El sector eléctrico.\n\nReconstruye el índice completo: lista los epígrafes en orden con su tiempo aproximado.",
+    back: [
+      "0. Apertura (1 min)",
+      "1. Actividades que comprende (2,5 min)",
+      "2. Centrales, redes e instalaciones (2,5 min)",
+      "3. Capacidad instalada y producción: el mix eléctrico (3 min)",
+      "4. Demanda (2 min)",
+      "5. Precios (2,5 min)",
+      "6. Contribución dentro del balance energético (1,5 min)",
+      "7. Evolución histórica (2,5 min)",
+      "8. Análisis sectorial y perspectivas (2,5 min)",
+      "9. Cierre (1 min)"
+    ]
+  },
+  {
+    id: "g3t8-e1", tema: 8, tipo: "Estructura",
+    tag: "T8 · Epígrafes 0-3",
+    front: "Apertura, actividades, instalaciones y mix — ¿qué tienes que decir?",
+    back: [
+      "Apertura: el sector eléctrico es el núcleo de la transición — descarbonizar la electricidad y después electrificarlo todo. Tesis: el problema ya no es producir limpio, es integrar",
+      "Actividades: liberalizadas, reguladas, de operación y emergentes; el unbundling como principio ordenador",
+      "Instalaciones: generación gestionable y no gestionable, red de transporte y distribución, interconexiones, sistemas no peninsulares, almacenamiento y CECRE",
+      "Mix: potencia instalada, ritmo de despliegue, producción renovable, libre de emisiones y reparto por tecnologías"
+    ]
+  },
+  {
+    id: "g3t8-e2", tema: 8, tipo: "Estructura",
+    tag: "T8 · Epígrafes 4-9",
+    front: "Demanda, precios, balance, historia y perspectivas — ¿qué cubres?",
+    back: [
+      "Demanda: cifra y crecimiento, contraste europeo, determinantes, efecto del autoconsumo e intercambios",
+      "Precios: formación marginalista, datos y volatilidad, servicios de ajuste, estructura del precio final",
+      "Balance: peso de la electricidad en el consumo final y aportación a la descarbonización",
+      "Historia: seis etapas, de la electrificación hidráulica al incidente de abril de 2025",
+      "Perspectivas: fortalezas, debilidades, retos técnicos y económicos, y la oportunidad industrial"
+    ]
+  },
+  {
+    id: "g3t8-c1", tema: 8, tipo: "Concepto",
+    tag: "T8 · Concepto · Actividades",
+    front: "Actividades del sector eléctrico y el principio que las ordena.",
+    back: [
+      "Liberalizadas: generación (retribución de mercado) y comercialización",
+      "Reguladas: transporte (Red Eléctrica, transportista único) y distribución (retribución fijada por la CNMC)",
+      "Operación: del sistema (Red Eléctrica) y del mercado (OMIE)",
+      "Emergentes: almacenamiento, agregación de demanda, servicios de recarga y autoconsumo individual y colectivo",
+      "Principio ordenador: unbundling jurídico, funcional y contable → garantiza el acceso de terceros a la red",
+      "Restricción física de fondo: la electricidad no se almacena masivamente de forma económica; generación y consumo son simultáneos"
+    ]
+  },
+  {
+    id: "g3t8-d1", tema: 8, tipo: "Dato",
+    tag: "T8 · Dato · Potencia instalada",
+    front: "Potencia instalada del sistema eléctrico español a cierre de 2025.",
+    back: [
+      "150.809 MW incluyendo autoconsumo: 68,9% renovable, 28,9% no renovable y 2,3% almacenamiento",
+      "Sin autoconsumo, la potencia renovable es el 67,1% del total",
+      "En 2025 se pusieron en servicio unos 10 GW de nueva eólica y fotovoltaica (11,6 GW con autoconsumo)",
+      "La fotovoltaica es ya la primera tecnología por potencia instalada, con cerca de 50 GW, habiendo superado a la eólica",
+      "Almacenamiento: 3.427 MW — 3.331 MW de bombeo y solo 96 MW de baterías"
+    ]
+  },
+  {
+    id: "g3t8-d2", tema: 8, tipo: "Dato",
+    tag: "T8 · Dato · Mix de generación",
+    front: "Mix de generación eléctrica española en 2025: los cuatro datos que debes dar.",
+    back: [
+      "Renovables: 55,5% del mix nacional, que sube al 56,6% incluyendo autoconsumo",
+      "Producción libre de emisiones (renovables + nuclear): máximo histórico de 202.835 GWh, el 74,52% del total generado",
+      "Por tecnologías, con autoconsumo: fotovoltaica 21,3% · eólica 20,6% · nuclear 18,1%",
+      "Autoconsumo: 13.485 GWh generados, equivalentes al 5,0% de la demanda nacional",
+      "Comparación europea: en ENTSO-E las renovables fueron el 47,9% → España claramente por encima de la media"
+    ]
+  },
+  {
+    id: "g3t8-d3", tema: 8, tipo: "Dato",
+    tag: "T8 · Dato · Demanda e intercambios",
+    front: "Demanda eléctrica española en 2025 e intercambios internacionales.",
+    back: [
+      "256.086 GWh, +2,8% respecto a 2024 (+1,6% corregida de laboralidad y temperaturas)",
+      "Contraste: en ENTSO-E la demanda creció solo un 0,5% → España creció cinco veces más que la media europea",
+      "Segundo año consecutivo de crecimiento, tras más de una década de estancamiento desde 2008",
+      "Motores: nuevos consumos industriales y digitales, bomba de calor y vehículo eléctrico",
+      "Intercambios: exportaciones +25,1% y saldo neto exportador de 12.794 GWh"
+    ]
+  },
+  {
+    id: "g3t8-d4", tema: 8, tipo: "Dato",
+    tag: "T8 · Dato · Redes",
+    front: "Red de transporte española: magnitudes y desarrollo en 2025.",
+    back: [
+      "~46.155 km de circuito y 99.071 MVA de capacidad de transformación",
+      "Malla principal a 400 kV y secundaria a 220 kV",
+      "En 2025 se pusieron en servicio 486 km de circuito y 212 nuevas posiciones",
+      "Interconexiones: Francia, Portugal (muy mallada, mercado ibérico), Marruecos y Andorra",
+      "Sistemas no peninsulares: Baleares (el enlace submarino llegó a cubrir el 26,5% de su demanda en diciembre), Canarias, Ceuta y Melilla",
+      "CECRE: centro de control de energías renovables, infraestructura pionera a escala mundial"
+    ]
+  },
+  {
+    id: "g3t8-d5", tema: 8, tipo: "Dato",
+    tag: "T8 · Dato · Precios eléctricos",
+    front: "Precios del mercado eléctrico en 2025: media, extremos y componentes.",
+    back: [
+      "Precio medio del mercado diario: en el entorno de 65 €/MWh (≈63 €/MWh en 2024) — tercer año consecutivo por debajo de 100 €/MWh",
+      "Máximo medio diario: ~145 €/MWh el 20 de enero · mínimo: 1,72 €/MWh el 19 de abril",
+      "Esa horquilla ilustra la canibalización de precios y la necesidad de almacenamiento",
+      "Los servicios de ajuste han ganado peso en el coste final, especialmente tras la operación reforzada de 2025",
+      "La CNMC ha fijado el marco retributivo de redes para 2026-2031, clave para financiar la red que exige la electrificación"
+    ]
+  },
+  {
+    id: "g3t8-c2", tema: 8, tipo: "Concepto",
+    tag: "T8 · Concepto · Historia del sector eléctrico",
+    front: "Evolución histórica del sector eléctrico español: las seis etapas.",
+    back: [
+      "Electrificación hidráulica de ámbito local; articulación mediante UNESA y unificación de frecuencia y tensión",
+      "Años 70-80: gran parque hidráulico y desarrollo nuclear tras la crisis del petróleo; moratoria nuclear de 1984",
+      "1997: Ley 54/1997 del Sector Eléctrico — liberalización, separación de actividades, creación del mercado mayorista",
+      "Años 2000: régimen especial y primas → déficit de tarifa",
+      "2013: Ley 24/2013 — fin del régimen especial, régimen retributivo específico con rentabilidad razonable",
+      "Desde 2018: subastas sin primas, autoconsumo liberalizado, crisis de precios 2021-2022 y excepción ibérica"
+    ]
+  },
+  {
+    id: "g3t8-c3", tema: 8, tipo: "Concepto",
+    tag: "T8 · Concepto · Diagnóstico y retos",
+    front: "Diagnóstico del sector eléctrico español: fortalezas, debilidades y retos.",
+    back: [
+      "Fortalezas: recurso excepcional, operador del sistema de prestigio, alta penetración renovable, precios mayoristas competitivos, industria exportadora",
+      "Debilidades: interconexión insuficiente, almacenamiento escaso, costes regulados elevados en el precio industrial, capacidad de acceso a la red",
+      "Retos técnicos: firmeza e inercia, vertidos y horas de precio muy bajo, refuerzo y digitalización de la distribución",
+      "Retos económicos: señal de inversión ante la canibalización (CfD y PPA) y mecanismos de capacidad que retribuyan disponibilidad",
+      "Oportunidad: dirigir el crecimiento de demanda a industria y centros de datos donde hay recurso y red → convertir ventaja de recurso en ventaja industrial (enlace Tema 1)",
+      "Hito a citar con rigor y prudencia: el incidente peninsular del 28 de abril de 2025 y el debate sobre inercia, control de tensión y potencia de cortocircuito"
+    ]
+  },
+
+  /* ==================== GRUPO III · TEMA 9 ==================== */
+  {
+    id: "g3t9-skeleton", tema: 9, tipo: "Estructura",
+    tag: "T9 · Esqueleto completo",
+    front: "El sector de las energías renovables, la cogeneración y los residuos (RECORE).\n\nReconstruye el índice completo: lista los epígrafes en orden con su tiempo aproximado.",
+    back: [
+      "0. Apertura (1 min)",
+      "1. Delimitación del concepto RECORE y marco retributivo (2,5 min)",
+      "2. Tecnologías renovables eléctricas (3 min)",
+      "3. Cogeneración (2,5 min)",
+      "4. Residuos y valorización energética (2 min)",
+      "5. Gases renovables (2,5 min)",
+      "6. Usos térmicos y biocarburantes (1,5 min)",
+      "7. Contribución dentro del balance energético (2 min)",
+      "8. Evolución histórica (2 min)",
+      "9. Análisis sectorial, perspectivas y cierre (2 min)"
+    ]
+  },
+  {
+    id: "g3t9-e1", tema: 9, tipo: "Estructura",
+    tag: "T9 · Epígrafes 0-3",
+    front: "Apertura, marco retributivo, tecnologías y cogeneración — ¿qué tienes que decir?",
+    back: [
+      "Apertura: aclarar de entrada que RECORE no es una categoría técnica sino la heredera del régimen especial — es lo que distingue este tema del Tema 8",
+      "Marco retributivo: régimen especial → reforma de 2013 y régimen retributivo específico → REER por subastas → mercado y PPA",
+      "Tecnologías: eólica terrestre y marina, fotovoltaica, termosolar, hidráulica y bombeo, biomasa, geotermia y marinas",
+      "Cogeneración: definición, ahorro de energía primaria, tecnologías, sectores y el problema del parque envejecido"
+    ]
+  },
+  {
+    id: "g3t9-e2", tema: 9, tipo: "Estructura",
+    tag: "T9 · Epígrafes 4-9",
+    front: "Residuos, gases renovables, usos térmicos, balance e historia — ¿qué cubres?",
+    back: [
+      "Residuos: jerarquía, vías de aprovechamiento, exigencias ambientales y comparación europea",
+      "Gases renovables: biogás, biometano e hidrógeno, con la cautela sobre las expectativas revisadas",
+      "Usos térmicos: biomasa, solar térmica, geotermia somera, aerotermia y biocarburantes",
+      "Balance: primaria, generación, potencia y consumo final",
+      "Historia: impulso, burbuja, ajuste y reinicio; y la lección de política pública sobre apoyos mal calibrados"
+    ]
+  },
+  {
+    id: "g3t9-c1", tema: 9, tipo: "Concepto",
+    tag: "T9 · Concepto · Qué es RECORE",
+    front: "¿Qué significa RECORE y cuál es su origen regulatorio?",
+    back: [
+      "Acrónimo regulatorio español: instalaciones de producción eléctrica a partir de Renovables, Cogeneración y Residuos",
+      "No es una categoría técnica sino la heredera del antiguo régimen especial: agrupa tecnologías muy distintas unidas por un mismo tratamiento retributivo",
+      "Origen: la Ley 54/1997 distinguía régimen ordinario y régimen especial, este último con prima sobre el precio de mercado",
+      "Es la etiqueta con la que la CNMC agrupa estas instalaciones en la liquidación del sistema"
+    ]
+  },
+  {
+    id: "g3t9-n1", tema: 9, tipo: "Norma",
+    tag: "T9 · Norma · Marco retributivo",
+    front: "Evolución del marco retributivo de las renovables: las tres normas y el cambio conceptual.",
+    back: [
+      "Ley 24/2013 y Real Decreto 413/2014: suprimen el régimen especial; todas las instalaciones al mercado en igualdad",
+      "Régimen retributivo específico: complemento a la inversión y a la operación para que la instalación tipo obtenga una «rentabilidad razonable», con revisión por semiperiodos",
+      "Real Decreto 960/2020: crea el REER, Régimen Económico de Energías Renovables, basado en subastas donde se puja un precio de la energía a largo plazo",
+      "Cambio conceptual clave: de retribuir la INVERSIÓN a retribuir la ENERGÍA a precio fijo pujado en competencia",
+      "En la práctica el REER funciona como un contrato por diferencias: si el mercado sube, la instalación devuelve; si baja, recibe"
+    ]
+  },
+  {
+    id: "g3t9-c2", tema: 9, tipo: "Concepto",
+    tag: "T9 · Concepto · Tecnologías renovables",
+    front: "Tecnologías renovables eléctricas: lo esencial de cada una.",
+    back: [
+      "Eólica terrestre: eje horizontal, tripala, a barlovento; más potencia unitaria, altura de buje y diámetro de rotor → mayor factor de capacidad",
+      "Eólica marina: la fija es inviable en gran parte del litoral español por batimetría; la flotante es la opción nacional (PNIEC: 3 GW en 2030)",
+      "Fotovoltaica: PERC → TOPCon → heterounión; bifacial y seguidores; modalidades de planta, autoconsumo y agrivoltaica",
+      "Termosolar: cilindroparabólica y torre con sales fundidas; ventaja diferencial la gestionabilidad; España es referencia mundial",
+      "Hidráulica: principal fuente de flexibilidad; recorrido en repotenciación y bombeo, incluido el reversible en minas abandonadas",
+      "Biomasa eléctrica y geotermia: aportación modesta; marinas todavía precomerciales"
+    ]
+  },
+  {
+    id: "g3t9-c3", tema: 9, tipo: "Concepto",
+    tag: "T9 · Concepto · Cogeneración",
+    front: "Cogeneración: definición, rendimiento, indicador regulatorio y problema estructural.",
+    back: [
+      "Producción conjunta de electricidad y calor útil aprovechando el calor residual que en una central convencional se disipa",
+      "Rendimiento global que puede superar el 80-90%, frente al 55-60% de un ciclo combinado que solo produce electricidad",
+      "Indicador regulatorio: el ahorro de energía primaria, que define la cogeneración de alta eficiencia y da acceso al régimen retributivo",
+      "Tecnologías: motores alternativos de gas, turbina de gas con caldera de recuperación, turbina de vapor en contrapresión; y trigeneración con frío por absorción",
+      "Está en la industria, no en el sector eléctrico: papel, química, alimentación, cerámica, refino y textil — donde hay demanda continua de calor",
+      "Problema estructural: parque envejecido de los noventa y dos mil, al final de su vida útil regulatoria, y expuesto al precio del gas"
+    ]
+  },
+  {
+    id: "g3t9-c4", tema: 9, tipo: "Concepto",
+    tag: "T9 · Concepto · Valorización de residuos",
+    front: "Residuos y valorización energética: el matiz imprescindible y las vías de aprovechamiento.",
+    back: [
+      "Jerarquía: prevención → preparación para la reutilización → reciclado → otras valorizaciones (energética) → eliminación",
+      "MATIZ IMPRESCINDIBLE: la valorización energética solo es preferible al vertedero, nunca al reciclado",
+      "Vías: incineración con recuperación de energía, biogás de vertedero, combustibles derivados de residuos y CSR en hornos de cemento, biomasa residual",
+      "Exigencias: normativa de emisiones industriales con control de dioxinas, furanos, metales pesados y gases ácidos; mejores técnicas disponibles",
+      "Situación española: peso muy inferior al de Alemania, Dinamarca o Suecia, con vertido todavía elevado",
+      "Instrumento fiscal: impuesto sobre depósito en vertedero, incineración y coincineración (Ley 7/2022)"
+    ]
+  },
+  {
+    id: "g3t9-c5", tema: 9, tipo: "Concepto",
+    tag: "T9 · Concepto · Gases renovables",
+    front: "Biogás, biometano e hidrógeno renovable: qué son y qué papel juegan.",
+    back: [
+      "Biogás: digestión anaerobia de residuos ganaderos, lodos, residuos agroindustriales y fracción orgánica urbana; metano y CO₂",
+      "Biometano: biogás purificado (upgrading) hasta calidad de gas natural → inyectable en red, aprovecha la infraestructura existente sin cambiar los equipos del consumidor",
+      "Doble beneficio del biometano: energía + gestión de purines y residuos + digestato como fertilizante = circularidad estricta",
+      "Hidrógeno renovable: electrólisis alcalina, PEM u óxido sólido. Usos prioritarios: sustituir hidrógeno gris en refino y amoniaco, siderurgia por reducción directa, y después transporte pesado",
+      "Objetivo: 12 GW de electrolizadores en 2030 (PNIEC actualizado), frente a los 4 GW de la Hoja de Ruta de 2020",
+      "Cautela honesta: las expectativas del hidrógeno se han revisado a la baja por coste, consumo eléctrico y falta de demanda contratada"
+    ]
+  },
+  {
+    id: "g3t9-d1", tema: 9, tipo: "Dato",
+    tag: "T9 · Dato · Contribución al balance",
+    front: "Contribución de las renovables al balance energético español.",
+    back: [
+      "Energía primaria (2024): 19,1% del mix",
+      "Producción interior: 60,1% de origen renovable → la energía autóctona española es ya mayoritariamente renovable",
+      "Generación eléctrica (2025): 55,5% del mix nacional, 56,6% con autoconsumo; fotovoltaica 21,3% y eólica 20,6%",
+      "Potencia instalada: 68,9% renovable incluyendo autoconsumo",
+      "Consumo final: aquí el avance es mucho menor — las renovables de uso final incluso cayeron un 3,5% en 2024. Objetivo PNIEC: 48% en 2030",
+      "Mensaje: España ha descarbonizado en gran medida la electricidad; le quedan el calor y el transporte"
+    ]
+  },
+  {
+    id: "g3t9-c6", tema: 9, tipo: "Concepto",
+    tag: "T9 · Concepto · Historia de las renovables",
+    front: "Evolución del sector renovable español y la lección de política pública.",
+    back: [
+      "Impulso: Plan de Fomento de las Energías Renovables (1999) y Plan de Energías Renovables 2005-2010; liderazgo mundial en eólica y termosolar",
+      "Burbuja: RD 661/2007 y despliegue fotovoltaico muy superior al previsto → registro de preasignación",
+      "Ajuste: moratoria de 2012 y reforma de 2013 con efectos retroactivos → largo contencioso arbitral internacional",
+      "Parón: entre 2012 y 2017 el despliegue se detiene casi por completo",
+      "Reinicio: subastas de 2017; RD-ley 15/2018 y RD 244/2019 liberalizan el autoconsumo y eliminan el «impuesto al sol»",
+      "Lección: los apoyos mal calibrados generan burbujas y los cambios retroactivos tienen un coste jurídico y reputacional duradero"
+    ]
+  },
+  {
+    id: "g3t9-c7", tema: 9, tipo: "Concepto",
+    tag: "T9 · Concepto · Usos térmicos",
+    front: "Renovables térmicas y en transporte: dónde queda el mayor recorrido.",
+    back: [
+      "Biomasa térmica: pélets, astillas y hueso de aceituna en calderas, redes de calor y calor de proceso; contribuye además a la gestión del monte",
+      "Solar térmica de baja temperatura para agua caliente sanitaria, exigida en edificación nueva por el Código Técnico",
+      "Geotermia somera con bomba de calor para climatización",
+      "Aerotermia: la bomba de calor computa como renovable en la contabilidad europea; probablemente el mayor potencial en residencial y terciario",
+      "Biocarburantes: bioetanol y biodiésel de primera generación (con límites por competencia alimentaria) y avanzados de segunda generación a partir de residuos"
+    ]
+  },
+
+  /* ==================== GRUPO III · TEMA 10 ==================== */
+  {
+    id: "g3t10-skeleton", tema: 10, tipo: "Estructura",
+    tag: "T10 · Esqueleto completo",
+    front: "El sector nuclear.\n\nReconstruye el índice completo: lista los epígrafes en orden con su tiempo aproximado.",
+    back: [
+      "0. Apertura (1 min)",
+      "1. Fundamentos y tecnología: centrales nucleares (2,5 min)",
+      "2. El parque nuclear español (2,5 min)",
+      "3. El ciclo del combustible nuclear (2,5 min)",
+      "4. Instalaciones radiactivas (2 min)",
+      "5. Gestión de residuos radiactivos y desmantelamiento (3 min)",
+      "6. Contribución dentro del balance energético (2 min)",
+      "7. Evolución histórica (2,5 min)",
+      "8. Análisis sectorial y perspectivas (2,5 min)",
+      "9. Cierre (1 min)"
+    ]
+  },
+  {
+    id: "g3t10-e1", tema: 10, tipo: "Estructura",
+    tag: "T10 · Epígrafes 0-3",
+    front: "Apertura, tecnología, parque español y ciclo de combustible — ¿qué tienes que decir?",
+    back: [
+      "Apertura: la nuclear ilustra el trilema energético; dar de entrada el dato del 6% de potencia frente a una quinta parte de la electricidad; y mencionar con precisión el estado del debate sobre Almaraz",
+      "Tecnología: principio físico, elementos del reactor, PWR y BWR, generaciones, SMR y principios de seguridad",
+      "Parque: siete reactores en cinco emplazamientos, potencia, titularidad, reactores cerrados, papel del CSN y calendario de cierre",
+      "Ciclo: front-end y back-end, ciclo abierto frente a cerrado, dependencia española y la excepción de Juzbado"
+    ]
+  },
+  {
+    id: "g3t10-e2", tema: 10, tipo: "Estructura",
+    tag: "T10 · Epígrafes 4-9",
+    front: "Instalaciones radiactivas, residuos, balance, historia y perspectivas — ¿qué cubres?",
+    back: [
+      "Instalaciones radiactivas: concepto, tres categorías, aplicaciones industriales y médicas, control y principios de protección radiológica",
+      "Residuos: clasificación, ENRESA, El Cabril, almacenamiento de alta actividad, 7.º PGRR y desmantelamiento",
+      "Balance: aportación al mix, factor de capacidad, firmeza e inercia",
+      "Historia: primera y segunda generación, moratoria de 1984, cierres y protocolo de 2019",
+      "Perspectivas: argumentos a favor y en contra de la prolongación, industria asociada, SMR y fusión; y el aviso de tono neutral"
+    ]
+  },
+  {
+    id: "g3t10-c1", tema: 10, tipo: "Concepto",
+    tag: "T10 · Concepto · Tecnología nuclear",
+    front: "Tecnología de las centrales nucleares: elementos, tipos y generaciones.",
+    back: [
+      "Principio: fisión de uranio-235 o plutonio-239 por captura neutrónica; el reactor es una fuente de calor y el resto es un ciclo de vapor convencional",
+      "Elementos: combustible, moderador, refrigerante, elementos de control (boro), reflector y blindaje biológico",
+      "PWR: dos circuitos separados con generadores de vapor · BWR: un solo circuito, el vapor se genera en la vasija",
+      "Otras: agua pesada (CANDU), refrigerados por gas, rápidos refrigerados por metal líquido",
+      "Generaciones: II (parque actual) · III y III+ (seguridad pasiva y redundancia) · IV (rápidos y sales fundidas)",
+      "Frontera: reactores modulares pequeños, por debajo de 300 MW, con fabricación seriada para atacar el sobrecoste y el plazo"
+    ]
+  },
+  {
+    id: "g3t10-c2", tema: 10, tipo: "Concepto",
+    tag: "T10 · Concepto · Seguridad nuclear",
+    front: "Principios de seguridad nuclear y mejoras posteriores a Fukushima.",
+    back: [
+      "Defensa en profundidad mediante barreras múltiples: pastilla, vaina, vasija y circuito primario, y contención",
+      "Redundancia y diversidad de los sistemas de seguridad",
+      "Las tres funciones de seguridad: controlar la reactividad, refrigerar el combustible y confinar la radiactividad",
+      "Tras Fukushima (2011): pruebas de resistencia europeas → refuerzo frente a sucesos externos extremos, recombinadores de hidrógeno, centros alternativos de gestión de emergencias y equipamiento móvil de respaldo"
+    ]
+  },
+  {
+    id: "g3t10-d1", tema: 10, tipo: "Dato",
+    tag: "T10 · Dato · Parque nuclear español",
+    front: "El parque nuclear español: reactores, emplazamientos, potencia y titularidad.",
+    back: [
+      "Siete reactores en operación, en cinco emplazamientos",
+      "PWR: Almaraz I y II (Cáceres), Ascó I y II (Tarragona), Vandellós II (Tarragona) y Trillo (Guadalajara)",
+      "BWR: Cofrentes (Valencia), el único del parque",
+      "Potencia conjunta en torno a 7.100 MW, aproximadamente el 6% de la potencia instalada del sistema",
+      "Titularidad compartida por Iberdrola, Endesa y Naturgy mediante participaciones cruzadas",
+      "Fuera de servicio: Vandellós I (incendio de 1989, en latencia), José Cabrera-Zorita (desmantelamiento completo, referencia internacional) y Santa María de Garoña (cese definitivo en 2017)"
+    ]
+  },
+  {
+    id: "g3t10-n1", tema: 10, tipo: "Norma",
+    tag: "T10 · Norma · CSN y calendario",
+    front: "El regulador nuclear y la situación del calendario de cierre a fecha de hoy.",
+    back: [
+      "Consejo de Seguridad Nuclear, creado por la Ley 15/1980: único organismo competente en seguridad nuclear y protección radiológica",
+      "Depende directamente de las Cortes Generales, no del Gobierno — de ahí su independencia",
+      "La autorización de explotación la otorga el Ministerio, previo informe preceptivo y vinculante del CSN",
+      "Protocolo de 2019 entre el Gobierno y las titulares: cierre escalonado entre 2027 y 2035, empezando por Almaraz. Es una de las hipótesis sobre las que se construyó el PNIEC",
+      "Situación en agosto de 2026: las titulares solicitaron prorrogar Almaraz hasta el 8 de junio de 2030 y en julio de 2026 el CSN emitió dictamen técnico favorable, limitado a seguridad. La decisión final corresponde al Gobierno y está pendiente",
+      "CONVIENE VERIFICAR antes del examen: es un asunto vivo"
+    ]
+  },
+  {
+    id: "g3t10-c3", tema: 10, tipo: "Concepto",
+    tag: "T10 · Concepto · Ciclo de combustible",
+    front: "Ciclo del combustible nuclear: fases, ciclo abierto frente a cerrado y posición española.",
+    back: [
+      "Front-end: minería y concentración → conversión a hexafluoruro → enriquecimiento en U-235 → fabricación de elementos combustibles",
+      "Back-end: almacenamiento temporal → reprocesado en su caso → gestión definitiva",
+      "Ciclo abierto (opción española): el combustible gastado es residuo y va a almacenamiento y disposición geológica",
+      "Ciclo cerrado: reprocesado para recuperar uranio y plutonio y fabricar MOX (Francia, Japón); menos volumen pero más coste y cuestiones de proliferación",
+      "España no tiene minería de uranio en actividad ni conversión ni enriquecimiento → dependencia exterior total en el front-end",
+      "Excepción industrial estratégica: la fábrica de elementos combustibles de ENUSA en Juzbado (Salamanca), que además exporta",
+      "Salvaguardias: Tratado EURATOM y OIEA; el enriquecimiento es la fase más sensible por no proliferación"
+    ]
+  },
+  {
+    id: "g3t10-c4", tema: 10, tipo: "Concepto",
+    tag: "T10 · Concepto · Instalaciones radiactivas",
+    front: "Instalaciones radiactivas: categorías, aplicaciones industriales y principios de protección radiológica.",
+    back: [
+      "Primera categoría: fábricas de producción de uranio y plantas de tratamiento de residuos radiactivos",
+      "Segunda: actividades o energías elevadas — aceleradores, radioterapia, irradiación industrial",
+      "Tercera: menor riesgo y muy mayoritarias — radiodiagnóstico, gammagrafía, medidores de nivel y densidad, laboratorios",
+      "Aplicaciones industriales: ensayos no destructivos por gammagrafía, medidores de nivel, espesor y densidad, trazadores, esterilización e irradiación de alimentos, datación y análisis de materiales",
+      "Control: autorización y registro (Ministerio o CCAA) con informe del CSN, supervisores y operadores con licencia, servicios de protección radiológica y vigilancia dosimétrica",
+      "Principios de protección radiológica: justificación · optimización (ALARA) · limitación de dosis"
+    ]
+  },
+  {
+    id: "g3t10-d2", tema: 10, tipo: "Dato",
+    tag: "T10 · Dato · Residuos radiactivos",
+    front: "Gestión de residuos radiactivos: clasificación, gestor, instalaciones y el 7.º PGRR.",
+    back: [
+      "Clasificación: muy baja actividad · baja y media de vida corta · alta actividad y vida larga (combustible gastado y vitrificados)",
+      "Gestor: ENRESA, empresa pública creada en 1984, financiada por la tasa que abonan los titulares",
+      "Baja y media actividad: centro de El Cabril (Córdoba), en operación desde 1992, con celdas también para muy baja actividad",
+      "Alta actividad hoy: piscinas en las centrales y almacenes temporales individualizados en seco, en contenedores, dentro del emplazamiento",
+      "7.ª revisión del Plan General de Residuos Radiactivos (finales de 2023): se abandona el almacén temporal centralizado de Villar de Cañas y se opta por almacenes descentralizados; solución definitiva en almacenamiento geológico profundo en la segunda mitad del siglo",
+      "Consecuencia: aumento del coste estimado del programa y subida notable de la tasa de ENRESA — elemento central del debate sobre las prórrogas"
+    ]
+  },
+  {
+    id: "g3t10-d3", tema: 10, tipo: "Dato",
+    tag: "T10 · Dato · Contribución al mix",
+    front: "Contribución de la nuclear al balance eléctrico y la paradoja que debes explicar.",
+    back: [
+      "Aportó en torno al 18,1% del mix nacional en 2025 considerando el autoconsumo; tercera tecnología tras fotovoltaica y eólica",
+      "Paradoja a explicar: con ~6% de la potencia instalada genera cerca de una quinta parte de la electricidad",
+      "Razón: factor de capacidad superior al 90% — opera en base, con paradas limitadas a las recargas de combustible",
+      "Junto a las renovables forma la producción libre de emisiones, que alcanzó el 74,52% de la generación en 2025",
+      "Papel técnico: firmeza, previsibilidad e, importante, inercia rotacional y potencia de cortocircuito por ser generación síncrona",
+      "Convenio metodológico: en el balance figura como fuente autóctona aunque el combustible sea importado — mejora artificialmente el indicador de dependencia"
+    ]
+  },
+  {
+    id: "g3t10-c5", tema: 10, tipo: "Concepto",
+    tag: "T10 · Concepto · Historia nuclear",
+    front: "Evolución histórica del sector nuclear español.",
+    back: [
+      "Primera generación: José Cabrera (1968), Santa María de Garoña y Vandellós I, con tecnología de Estados Unidos y Francia",
+      "Segunda generación: tras la crisis de 1973, el Plan Energético Nacional impulsa un programa ambicioso con fuerte participación industrial nacional",
+      "Moratoria nuclear de 1984, consolidada legalmente en 1994: paraliza Lemóniz, Valdecaballeros y Trillo II; la indemnización se financió durante décadas vía tarifa",
+      "El parque entra en explotación entre 1981 y 1988; incendio de Vandellós I en 1989",
+      "Siglo XXI: cierre de José Cabrera (2006), cese de Garoña (2013, clausura en 2017) y protocolo de cierre de 2019",
+      "Contexto europeo actual: revalorización de la nuclear, con inclusión condicionada en la taxonomía y prolongaciones en varios Estados miembros"
+    ]
+  },
+  {
+    id: "g3t10-c6", tema: 10, tipo: "Concepto",
+    tag: "T10 · Concepto · Debate sobre la prolongación",
+    front: "Argumentos a favor y en contra de prolongar la vida del parque nuclear. ¿Qué tono debes adoptar?",
+    back: [
+      "A favor: electricidad firme y libre de emisiones a coste variable bajo; sostiene la seguridad de suministro mientras el almacenamiento es escaso; aporta inercia y estabilidad; evita sustituirla por ciclos combinados de gas",
+      "En contra: el cierre estaba planificado y sobre él se diseñaron inversiones renovables, de modo que alterarlo genera incertidumbre regulatoria; costes adicionales de operación, mejoras y residuos; más residuos de alta actividad sin solución definitiva",
+      "Debate económico central: la operación a largo plazo exige inversiones y su rentabilidad depende de la fiscalidad específica, en particular de la tasa de ENRESA y de los tributos autonómicos",
+      "Industria asociada: ingeniería, componentes, montaje, O&M y combustible, con capacidad exportadora y participación en ITER",
+      "Perspectivas: reactores modulares pequeños y alianza industrial europea; fusión con ITER e IFMIF-DONES en Granada (enlace Tema 3)",
+      "TONO: exponer marco vigente, estado de tramitación y argumentos de ambas posiciones, sin pronunciarse personalmente"
+    ]
+  },
   /* ==================== ENLACES ENTRE TEMAS ==================== */
   {
     id: "x-enlace-1", tema: 0, tipo: "Enlace",
